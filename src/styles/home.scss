@@ -1,0 +1,72 @@
+@import "vars.scss";
+
+#HTB_container {
+    display: flex;
+    width: 100vw;
+    height: 8vh;
+    flex-direction: row;
+    justify-content: space-between;
+    @include tempBorder;
+    .left_box {
+        width: 50%;
+        height: 100%;
+        @include tempBorder;
+        .icon {
+            width: 20%;
+            height: 100%;
+            @include tempBorder;
+        }
+    }
+    .right_box {
+        width: 30%;
+        height: 100%;
+        @include tempBorder;
+    }
+}
+
+#HMB_container {
+    display: flex;
+    width: 100vw;
+    height: 35vh;
+    flex-direction: column;
+    justify-content: space-between;
+    @include tempBorder(red);
+    .horiz_box {
+        @include tempBorder;
+        display: flex;
+        width: 100%;
+        height: 75%;
+        flex-direction: column;
+        overflow-x: scroll;
+        .content_container {
+            display: flex;
+            width: fit-content;
+            height: 100%;
+            flex-direction: row;
+            justify-content: start;
+            align-items: center;
+            // flex-shrink: 0; global에 추가
+            .content_box {
+                width: 60vw;
+                height: 80%;
+                margin: 0 5vw;
+                @include tempBorder;
+            }
+        }
+    }
+    .bottom_text_box {
+        width: 100%;
+        height: 25%;
+        @include tempBorder;
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        .text {
+            width: 100%;
+            font-size: 2rem;
+            text-align: start;
+            @include tempBorder;
+        }
+    }
+}
