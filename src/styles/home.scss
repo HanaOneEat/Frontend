@@ -1,72 +1,87 @@
 @import "vars.scss";
+#Home_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+  height: 100vh;
+  width: 100vw;
 
-#HTB_container {
+  #HTB_container {
+    @include tempBorder;
     display: flex;
-    width: 100vw;
-    height: 8vh;
     flex-direction: row;
     justify-content: space-between;
-    @include tempBorder;
+    width: 100%;
+    height: 8%;
     .left_box {
-        width: 50%;
-        height: 100%;
+      @include tempBorder;
+      width: 50%;
+      height: 100%;
+      .icon {
         @include tempBorder;
-        .icon {
-            width: 20%;
-            height: 100%;
-            @include tempBorder;
-        }
+        width: 20%;
+        height: 100%;
+      }
     }
     .right_box {
-        width: 30%;
-        height: 100%;
-        @include tempBorder;
+      @include tempBorder;
+      width: 30%;
+      height: 100%;
     }
-}
+  }
 
-#HMB_container {
+  #HMB_container {
+    @include tempBorder(red);
     display: flex;
-    width: 100vw;
-    height: 35vh;
     flex-direction: column;
     justify-content: space-between;
-    @include tempBorder(red);
+    width: 100%;
+    height: 35%;
     .horiz_box {
-        @include tempBorder;
-        display: flex;
-        width: 100%;
-        height: 75%;
-        flex-direction: column;
-        overflow-x: scroll;
-        .content_container {
-            display: flex;
-            width: fit-content;
-            height: 100%;
-            flex-direction: row;
-            justify-content: start;
-            align-items: center;
-            // flex-shrink: 0; global에 추가
-            .content_box {
-                width: 60vw;
-                height: 80%;
-                margin: 0 5vw;
-                @include tempBorder;
-            }
-        }
-    }
-    .bottom_text_box {
-        width: 100%;
-        height: 25%;
-        @include tempBorder;
+      @include tempBorder;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 75%;
+      overflow-x: scroll;
+      .content_container {
         display: flex;
         flex-direction: row;
         justify-content: start;
         align-items: center;
-        .text {
-            width: 100%;
-            font-size: 2rem;
-            text-align: start;
-            @include tempBorder;
+        width: fit-content;
+        height: 100%;
+        // flex-shrink: 0; global에 추가
+        .content_box {
+          @include tempBorder;
+          margin: 0 5vw;
+          width: 60vw;
+          height: 80%;
         }
+      }
     }
+    .bottom_text_box {
+      @include tempBorder;
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: center;
+      width: 100%;
+      height: 25%;
+      .text {
+        @include tempBorder;
+        width: 100%;
+        font-size: 2rem;
+        text-align: start;
+      }
+    }
+  }
+
+  #HBB_container {
+    @include tempBorder(blue);
+    width: 100%;
+    height: 57%;
+    border-radius: 24px 24px 0 0;
+  }
 }
