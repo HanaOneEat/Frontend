@@ -3,8 +3,7 @@
 #Home_container {
   display: flex;
   flex-direction: column;
-  justify-content: stretch;
-  align-items: stretch;
+  justify-content: start;
   position: realtive;
   width: 100vw;
   height: 100vh;
@@ -13,28 +12,28 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0 5%;
+    padding: 0 3%;
     width: 100%;
     height: 6%;
     .left_box {
       //   @include tempBorder;
       display: flex;
       flex-direction: row;
-      justify-content: start;
+      justify-content: space-between;
       align-items: center;
       width: 60%;
       height: 100%;
       .icon {
         // @include tempBorder;
-        width: 20%;
+        width: 25%;
         height: 80%;
       }
       .text {
         // @include tempBorder;
         width: 75%;
         text-align: start;
-        font-size: 1.4rem;
-        font-family: "Pretendard-Bold";
+        font-size: 1.5rem;
+        font-family: "Pretendard-ExtraBold";
       }
     }
     .right_box {
@@ -47,37 +46,38 @@
       height: 100%;
       .pay_icon {
         // @include tempBorder;
-        width: 30%;
+        width: 20%;
         height: 60%;
         // object-fit: cover;
       }
       .bell_icon {
         // @include tempBorder;
         width: 40%;
-        height: 60%;
+        height: 43%;
       }
     }
   }
 
   #HMB_container {
-    @include tempBorder(green);
+    // @include tempBorder(green);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: start;
     position: realtive;
     width: 100%;
-    height: 35%;
+    height: 30%;
     .background_image {
       position: absolute;
       top: 0;
       z-index: -1;
+      filter: contrast(50%) brightness(130%);
     }
     .horiz_box {
-      @include tempBorder;
+      // @include tempBorder;
       display: flex;
       flex-direction: column;
       width: 100%;
-      height: 75%;
+      height: 80%;
       overflow-x: scroll;
       .content_container {
         display: flex;
@@ -92,9 +92,9 @@
           border-radius: 16px;
           //   @include tempBorder(Red);
           margin: 0 2vw;
-          width: 60vw;
+          width: 70vw;
           height: 80%;
-          box-shadow: -5px 7px 5px 3px rgba(0, 0, 0, 0.15);
+          box-shadow: -5px 7px 8px 3px rgba(0, 0, 0, 0.15);
         }
         .green_box {
           display: flex;
@@ -104,10 +104,10 @@
           background-color: rgb(203, 244, 226);
           padding: 2%;
           .icon {
-            padding: 2%;
+            // padding: 2%;
             // @include tempBorder;
             width: 15%;
-            height: 20%;
+            height: 18%;
             overflow: visible;
           }
           .title {
@@ -115,7 +115,7 @@
             width: 100%;
             height: 55%;
             // @include tempBorder;
-            padding-top: 2%;
+            padding: 5% 0 0 2%;
             text-align: start;
             font-size: 1.7rem;
             font-family: "Pretendard-Bold";
@@ -157,15 +157,29 @@
       }
     }
     .bottom_text_box {
-      @include tempBorder;
+      // @include tempBorder;
       display: flex;
       flex-direction: row;
       justify-content: start;
       align-items: center;
       width: 100%;
-      height: 25%;
+      height: 20%;
+      padding-left: 3%;
+      padding-bottom: 3%;
+      .earth_icon {
+        object-fit: contain;
+        height: 80%;
+        width: 10%;
+        filter: contrast(60%) brightness(130%);
+        // @include tempBorder;
+      }
       .text {
-        @include tempBorder;
+        color: rgb(91, 90, 90);
+        > span {
+          font-family: "Pretendard-Bold";
+        }
+        font-family: "Pretendard-Medium";
+        // @include tempBorder;
         width: 100%;
         font-size: 2rem;
         text-align: start;
@@ -174,60 +188,60 @@
   }
 
   #HBB_container {
-    @include tempBorder(blue);
+    // @include tempBorder(blue);
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
-    background-color: rgb(240, 240, 240);
+    background-color: rgb(244, 248, 249);
     border-radius: 24px 24px 0 0;
-    padding: 0 5%;
     width: 100%;
     height: 59%;
-    .top_box {
-      @include tempBorder;
-      width: 100%;
-      height: 15%;
-    }
-    .mid_box {
-      @include tempBorder;
-      width: 100%;
-      height: 15%;
-    }
-    .bot_box {
-      @include tempBorder(red);
-      background-color: white;
-      padding: 5%;
-      width: 100%;
-      height: fit-content;
-      .top_title_box {
-        @include tempBorder;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        height: fit-content;
-        .left_title {
-          font-family: "Pretendard-Bold";
-          font-size: 2rem;
-        }
-        .right_button {
-        }
-      }
-      .content_box {
-        @include tempBorder;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        .temp_content {
-          @include tempBorder(red);
-          width: 23%;
-          height: 10vh;
-          margin-top: 5%;
-        }
-      }
-    }
+    padding-top: 5%;
+    // .top_box {
+    //   @include tempBorder;
+    //   width: 100%;
+    //   height: 15%;
+    // }
+    // .mid_box {
+    //   @include tempBorder;
+    //   width: 100%;
+    //   height: 15%;
+    // }
+    // .bot_box {
+    //   @include tempBorder(red);
+    //   background-color: white;
+    //   padding: 5%;
+    //   width: 100%;
+    //   height: fit-content;
+    //   .top_title_box {
+    //     @include tempBorder;
+    //     display: flex;
+    //     flex-direction: row;
+    //     justify-content: space-between;
+    //     align-items: center;
+    //     width: 100%;
+    //     height: fit-content;
+    //     .left_title {
+    //       font-family: "Pretendard-Bold";
+    //       font-size: 2rem;
+    //     }
+    //     .right_button {
+    //     }
+    //   }
+    //   .content_box {
+    //     @include tempBorder;
+    //     display: flex;
+    //     flex-direction: row;
+    //     justify-content: space-between;
+    //     flex-wrap: wrap;
+    //     .temp_content {
+    //       @include tempBorder(red);
+    //       width: 23%;
+    //       height: 10vh;
+    //       margin-top: 5%;
+    //     }
+    //   }
+    // }
   }
 }

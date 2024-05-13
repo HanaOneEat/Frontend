@@ -1,9 +1,12 @@
 import React from "react";
 
+import MainBottomImage from "../assets/images/MainBottomImage.jpg";
+
 export const HomeBotBox = () => {
   return (
     <div id="HBB_container">
-      <div className="top_box"></div>
+      <img className="main_bottom_image" src={MainBottomImage} alt="메인페이지 아래 이미지" />
+      {/* <div className="top_box"></div>
       <div className="mid_box"></div>
       <div className="bot_box">
         <div className="top_title_box">
@@ -24,7 +27,7 @@ export const HomeBotBox = () => {
           <div className="temp_content"></div>
           <div className="temp_content"></div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -3,7 +3,8 @@ import React from "react";
 import crown from "../assets/images/crown.png";
 import pay_icon from "../assets/images/pay_icon.png";
 
-import { BiBell } from "react-icons/bi";
+import { LuScanLine } from "react-icons/lu";
+import { SlBell } from "react-icons/sl";
 
 const HomeTopBar = () => {
   return (
@@ -17,9 +18,10 @@ const HomeTopBar = () => {
         </span>
       </div>
       <div className="right_box">
-        <img className="pay_icon" src={pay_icon} alt="페이 버튼 아이콘" />
+        {/* <img className="pay_icon" src={pay_icon} alt="페이 버튼 아이콘" /> */}
+        <LuScanLine className="pay_icon" />
         {/* <div className="bell_icon"> */}
-        <BiBell className="bell_icon" />
+        <SlBell className="bell_icon" />
         {/* </div> */}
       </div>
     </div>

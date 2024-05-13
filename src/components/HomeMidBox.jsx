@@ -2,6 +2,7 @@ import React from "react";
 
 import MainBackground from "../assets/images/MainBackground.jpg";
 import Hanamoney_logo from "../assets/images/hanamoney_logo.png";
+import Earth from "../assets/images/earth.png";
 
 const HomeMidBox = () => {
   return (
@@ -25,7 +26,11 @@ const HomeMidBox = () => {
         </div>
       </div>
       <div className="bottom_text_box">
-        <span className="text">41종 통화 전체 조회</span>
+        <img className="earth_icon" src={Earth} alt="지구본 이미지" />
+        <span className="text">
+          <span>41종 통화 </span>
+          전체조회
+        </span>
       </div>
       <img className="background_image" src={MainBackground} alt="메인 페이지 배경" />
     </div>
