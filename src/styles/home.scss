@@ -4,24 +4,36 @@
   flex-direction: column;
   justify-content: stretch;
   align-items: stretch;
-  height: 100vh;
+  position: realtive;
   width: 100vw;
-
+  height: 100vh;
   #HTB_container {
     @include tempBorder;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 0 5%;
     width: 100%;
-    height: 8%;
+    height: 6%;
     .left_box {
       @include tempBorder;
-      width: 50%;
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: center;
+      width: 60%;
       height: 100%;
       .icon {
         @include tempBorder;
         width: 20%;
         height: 100%;
+      }
+      .text {
+        @include tempBorder;
+        width: 75%;
+        text-align: start;
+        font-size: 1.4rem;
+        font-family: "Pretendard-Bold";
       }
     }
     .right_box {
@@ -32,12 +44,18 @@
   }
 
   #HMB_container {
-    @include tempBorder(red);
+    @include tempBorder(green);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: realtive;
     width: 100%;
     height: 35%;
+    .background_image {
+      position: absolute;
+      top: 0;
+      z-index: -1;
+    }
     .horiz_box {
       @include tempBorder;
       display: flex;
@@ -80,8 +98,59 @@
 
   #HBB_container {
     @include tempBorder(blue);
-    width: 100%;
-    height: 57%;
+    background-color: rgb(240, 240, 240);
     border-radius: 24px 24px 0 0;
+    width: 100%;
+    height: 59%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 0 5%;
+    .top_box {
+      @include tempBorder;
+      width: 100%;
+      height: 15%;
+    }
+    .mid_box {
+      @include tempBorder;
+      width: 100%;
+      height: 15%;
+    }
+    .bot_box {
+      padding: 5%;
+      background-color: white;
+      @include tempBorder(red);
+      width: 100%;
+      height: fit-content;
+      .top_title_box {
+        @include tempBorder;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: fit-content;
+        .left_title {
+          font-family: "Pretendard-Bold";
+          font-size: 2rem;
+        }
+        .right_button {
+        }
+      }
+      .content_box {
+        @include tempBorder;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .temp_content {
+          @include tempBorder(red);
+          margin-top: 5%;
+          width: 17vw;
+          height: 17vw;
+        }
+      }
+    }
   }
 }
