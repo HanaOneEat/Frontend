@@ -1,4 +1,5 @@
 @import "vars.scss";
+
 #Home_container {
   display: flex;
   flex-direction: column;
@@ -8,7 +9,7 @@
   width: 100vw;
   height: 100vh;
   #HTB_container {
-    @include tempBorder;
+    // @include tempBorder;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -16,7 +17,7 @@
     width: 100%;
     height: 6%;
     .left_box {
-      @include tempBorder;
+      //   @include tempBorder;
       display: flex;
       flex-direction: row;
       justify-content: start;
@@ -24,12 +25,12 @@
       width: 60%;
       height: 100%;
       .icon {
-        @include tempBorder;
+        // @include tempBorder;
         width: 20%;
-        height: 100%;
+        height: 80%;
       }
       .text {
-        @include tempBorder;
+        // @include tempBorder;
         width: 75%;
         text-align: start;
         font-size: 1.4rem;
@@ -37,9 +38,24 @@
       }
     }
     .right_box {
-      @include tempBorder;
+      //   @include tempBorder;
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
+      align-items: center;
       width: 30%;
       height: 100%;
+      .pay_icon {
+        // @include tempBorder;
+        width: 30%;
+        height: 60%;
+        // object-fit: cover;
+      }
+      .bell_icon {
+        // @include tempBorder;
+        width: 40%;
+        height: 60%;
+      }
     }
   }
 
@@ -70,12 +86,73 @@
         align-items: center;
         width: fit-content;
         height: 100%;
+        padding-left: 3vw;
         // flex-shrink: 0; global에 추가
         .content_box {
-          @include tempBorder;
-          margin: 0 5vw;
+          border-radius: 16px;
+          //   @include tempBorder(Red);
+          margin: 0 2vw;
           width: 60vw;
           height: 80%;
+          box-shadow: -5px 7px 5px 3px rgba(0, 0, 0, 0.15);
+        }
+        .green_box {
+          background-color: rgb(203, 244, 226);
+          padding: 2%;
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          justify-content: center;
+          .icon {
+            // @include tempBorder;
+            width: 15%;
+            overflow: visible;
+            height: 20%;
+            padding: 2%;
+          }
+          .title {
+            // @include tempBorder;
+            padding-top: 2%;
+            width: 100%;
+            height: 55%;
+            text-align: start;
+            font-size: 1.7rem;
+            font-family: "Pretendard-Bold";
+            color: rgb(116, 116, 116);
+          }
+          .bot_button {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            background-color: white;
+            border-radius: 16px;
+            width: 100%;
+            height: 25%;
+            > * {
+              display: grid;
+              place-content: center;
+              font-family: "Pretendard-Bold";
+              font-size: 1.7rem;
+            }
+            .left {
+              //   @include tempBorder(blue);
+              width: 50%;
+              height: 100%;
+            }
+            .gap_border {
+              border-left: 1px solid rgba(0, 0, 0, 0.326);
+              height: 40%;
+            }
+            .right {
+              //   @include tempBorder(blue);
+              color: rgb(13, 126, 77);
+              width: 50%;
+              height: 100%;
+            }
+          }
+        }
+        .blue_box {
+          background-color: rgb(219, 233, 255);
         }
       }
     }
@@ -98,15 +175,15 @@
 
   #HBB_container {
     @include tempBorder(blue);
-    background-color: rgb(240, 240, 240);
-    border-radius: 24px 24px 0 0;
-    width: 100%;
-    height: 59%;
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
+    background-color: rgb(240, 240, 240);
+    border-radius: 24px 24px 0 0;
     padding: 0 5%;
+    width: 100%;
+    height: 59%;
     .top_box {
       @include tempBorder;
       width: 100%;
@@ -118,9 +195,9 @@
       height: 15%;
     }
     .bot_box {
-      padding: 5%;
-      background-color: white;
       @include tempBorder(red);
+      background-color: white;
+      padding: 5%;
       width: 100%;
       height: fit-content;
       .top_title_box {
@@ -146,9 +223,9 @@
         flex-wrap: wrap;
         .temp_content {
           @include tempBorder(red);
+          width: 23%;
+          height: 10vh;
           margin-top: 5%;
-          width: 17vw;
-          height: 17vw;
         }
       }
     }

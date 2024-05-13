@@ -1,4 +1,6 @@
 @use "home.scss";
+@use "botnavbar.scss";
+
 @use "font.scss";
 
 *,
@@ -9,6 +11,9 @@
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
+  overflow-y: hidden;
+  background: none;
+  scrollbar-width: none;
 }
 
 html {
@@ -16,5 +21,11 @@ html {
 }
 
 img {
+  object-fit: cover;
   width: 100%;
+}
+
+.App {
+  position: relative;
+  z-index: 0;
 }

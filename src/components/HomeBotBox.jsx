@@ -17,6 +17,12 @@ export const HomeBotBox = () => {
           <div className="temp_content"></div>
           <div className="temp_content"></div>
           <div className="temp_content"></div>
+          <div className="temp_content"></div>
+          <div className="temp_content"></div>
+          <div className="temp_content"></div>
+          <div className="temp_content"></div>
+          <div className="temp_content"></div>
+          <div className="temp_content"></div>
         </div>
       </div>
     </div>
