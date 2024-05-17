@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 // import Main from "./Main";
 import BotNavBar from "./components/BotNavBar"; // BotNavBar 컴포넌트를 임포트
+import Main from "./components/Main";
+import AuthESG from "./components/AuthESG";
 
 function App() {
   return (
@@ -10,10 +12,11 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/main" element={<Main />} /> */}
+          <Route path="/hana_oneit" element={<Main />} />
+          <Route path="/auth_esg" element={<AuthESG />} />
         </Routes>
-        <BotNavBar />
       </div>
+      <BotNavBar />
     </Router>
   );
 }

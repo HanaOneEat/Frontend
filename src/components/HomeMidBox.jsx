@@ -4,6 +4,7 @@ import MainBackground from "../assets/images/MainBackground.jpg";
 import Hanamoney_logo from "../assets/images/hanamoney_logo.png";
 import Earth from "../assets/images/earth.png";
 import NewIcon from "../assets/images/New_ver1.png";
+import { Link } from "react-router-dom";
 
 const HomeMidBox = () => {
   return (
@@ -36,7 +37,9 @@ const HomeMidBox = () => {
                 소개글
               </div>
             </div>
-            <div className="bot_button">서비스로 이동</div>
+            <Link to="hana_oneit" className="bot_button">
+              서비스로 이동
+            </Link>
           </div>
         </div>
       </div>
