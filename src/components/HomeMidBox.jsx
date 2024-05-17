@@ -3,6 +3,7 @@ import React from "react";
 import MainBackground from "../assets/images/MainBackground.jpg";
 import Hanamoney_logo from "../assets/images/hanamoney_logo.png";
 import Earth from "../assets/images/earth.png";
+import NewIcon from "../assets/images/New_ver1.png";
 
 const HomeMidBox = () => {
   return (
@@ -22,7 +23,21 @@ const HomeMidBox = () => {
               <div className="right">로그인</div>
             </div>
           </div>
-          <div className="content_box blue_box"></div>
+
+          <div className="content_box blue_box">
+            <div className="new_icon_box">
+              <img className="new_icon" src={NewIcon} alt="New 아이콘 이미지" />
+            </div>
+            <div className="top_box">
+              <div className="logo_box"></div>
+              <div className="title">
+                하나원잇
+                <br />
+                소개글
+              </div>
+            </div>
+            <div className="bot_button">서비스로 이동</div>
+          </div>
         </div>
       </div>
       <div className="bottom_text_box">
