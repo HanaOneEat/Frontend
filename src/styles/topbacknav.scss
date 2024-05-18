@@ -1,0 +1,24 @@
+@import "vars.scss";
+
+#TBN_container {
+  //   @include tempBorder;
+  display: flex;
+  flex-direction: row;
+
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  height: 5vh;
+  .back_box {
+    //  @include tempBorder;
+    padding: 0.5vh;
+    width: fit-content;
+    height: fit-content;
+    margin-left: 1vh;
+
+    .back_icon {
+      width: 3vh;
+      height: 3vh;
+    }
+  }
+}
