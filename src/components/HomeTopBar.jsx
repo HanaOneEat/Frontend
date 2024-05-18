@@ -19,7 +19,10 @@ const HomeTopBar = () => {
       </div>
       <div className="right_box">
         {/* <img className="pay_icon" src={pay_icon} alt="페이 버튼 아이콘" /> */}
-        <LuScanLine className="pay_icon" />
+        <div className="pay_box">
+          <LuScanLine className="pay_icon" />
+          <div className="pay_redbar" />
+        </div>
         {/* <div className="bell_icon"> */}
         <SlBell className="bell_icon" />
         {/* </div> */}

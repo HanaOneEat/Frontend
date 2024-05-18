@@ -16,3 +16,15 @@
     transform: scale(1.15) rotate(50deg);
   }
 }
+
+@keyframes payRedbarAni {
+  0% {
+    top: 35%;
+  }
+  50% {
+    top: 65%;
+  }
+  100% {
+    top: 35%;
+  }
+}
