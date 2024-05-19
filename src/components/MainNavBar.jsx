@@ -43,6 +43,7 @@ const MainNavBar = () => {
           <div className="text_box">마이페이지</div>
         </Link>
       </div>
+      <div className="iphone_bot_bar" />
     </div>
   );
 };

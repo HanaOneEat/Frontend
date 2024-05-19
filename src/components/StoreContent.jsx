@@ -21,10 +21,7 @@ const StoreContent = ({ storeInfo }) => {
         <div className="score_box">
           <FaStar className="icon" />
           <div className="score">{storeInfo.score}</div>
-          <div className="reviews">
-            ({storeInfo.reviews >= 1000 ? Math.floor(storeInfo.reviews / 1000) + "," : ""}
-            {storeInfo.reviews % 1000})
-          </div>
+          <div className="reviews">({storeInfo.reviews.toLocaleString("ko-KR")})</div>
         </div>
         <div className="point_box">
           <FaLeaf className="icon" />

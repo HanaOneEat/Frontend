@@ -5,6 +5,7 @@ import Main from "./components/Main";
 import AuthESG from "./components/AuthESG";
 import MainNavBar from "./components/MainNavBar";
 import Map from "./components/Map";
+import MyPage from "./components/MyPage";
 
 function App() {
   const currentLocation = useLocation(); //현재 path
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/main" element={<Main />} />
         <Route path="/map" element={<Map />} />
+        <Route path="/my_page" element={<MyPage />} />
         <Route path="/auth_esg" element={<AuthESG />} />
       </Routes>
       {!isHome && <MainNavBar />}
