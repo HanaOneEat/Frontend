@@ -17,14 +17,6 @@ const AuthESG = () => {
 
   const handleFileChange = (event) => {
     setInputFile(event.target.file);
-    // const getFiles = event.target.files;
-    // if (getFiles.length > 3) {
-    //   setInputFile([]);
-    //   setErrorMsg(true);
-    // } else {
-    //   setErrorMsg(false);
-    //   setInputFile(Array.from(event.target.files));
-    // }
   };
 
   const monthBit = 0b1010110101010; //1,3,5,7,8,10,12월 비트체킹

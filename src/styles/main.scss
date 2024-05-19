@@ -1,0 +1,118 @@
+@import "vars.scss";
+
+#M_container {
+  padding: 0 3%;
+  //   background-color: yellow;
+  width: 100%;
+  height: 88vh;
+  .text_box {
+    //  @include tempBorder;
+    .title {
+      margin: 1.5% 0;
+      // @include tempBorder(red);
+      font-size: 2.5rem;
+      font-family: "Pretendard-Bold";
+    }
+    .subtext {
+      color: rgb(120, 120, 120);
+      // @include tempBorder(red);
+      font-size: 1.5rem;
+      font-family: "Pretendard-Regular";
+      margin-bottom: 4%;
+    }
+  }
+  .store_container {
+    //  @include tempBorder;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    width: 100%;
+    height: 13vh;
+    margin-bottom: 20px;
+    box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.3);
+    * {
+      // @include tempBorder;
+    }
+    .store_image_box {
+      border-radius: 12px;
+      width: 12vh;
+      height: 12vh;
+      overflow: hidden;
+      .store_image {
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+      }
+    }
+    .store_text_box {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: start;
+      width: 100%;
+      height: 12vh;
+      margin-left: 10px;
+      overflow: hidden;
+      > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        height: 24.5%;
+      }
+      .icon {
+        width: auto;
+        height: 60%;
+        margin-right: 10px;
+      }
+      .name {
+        @include ellipse;
+        @include tempBorder;
+        width: 200px;
+        font-size: 2rem;
+        font-family: "Pretendard-Bold";
+      }
+      .intro_box {
+        color: rgba(150, 150, 150, 1);
+        width: 100%;
+        overflow: hidden;
+        .icon {
+        }
+        .intro {
+          @include ellipse;
+          width: 200px;
+          font-size: 1.3rem;
+          font-family: "Pretendard-Regular";
+        }
+      }
+      .score_box {
+        font-size: 1.6rem;
+        .icon {
+          color: gold;
+        }
+        .score {
+          font-family: "Pretendard-ExtraBold";
+          margin-right: 10px;
+        }
+        .reviews {
+          font-family: "Pretendard-Regular";
+        }
+      }
+      .point_box {
+        font-size: 1.5rem;
+        .icon {
+          color: $hana-green;
+        }
+        .point {
+          font-family: "Pretendard-ExtraBold";
+          margin-right: 10px;
+        }
+        .count_box {
+          font-family: "Pretendard-Light";
+        }
+      }
+    }
+  }
+}

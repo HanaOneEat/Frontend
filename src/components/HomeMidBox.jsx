@@ -38,7 +38,7 @@ const HomeMidBox = () => {
                 소개글
               </div>
             </div>
-            <Link to="hana_oneit" className="bot_button">
+            <Link to="main" className="bot_button">
               서비스로 이동
             </Link>
           </div>

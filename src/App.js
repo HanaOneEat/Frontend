@@ -1,23 +1,23 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Home from "./components/Home";
-// import Main from "./Main";
-import BotNavBar from "./components/BotNavBar"; // BotNavBar 컴포넌트를 임포트
 import Main from "./components/Main";
 import AuthESG from "./components/AuthESG";
+import MainNavBar from "./components/MainNavBar";
 
 function App() {
+  const currentLocation = useLocation(); //현재 path
+  const isHome = currentLocation.pathname === "/"; //Home인가
+
   return (
-    <Router>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/hana_oneit" element={<Main />} />
-          <Route path="/auth_esg" element={<AuthESG />} />
-        </Routes>
-      </div>
-      <BotNavBar />
-    </Router>
+    <div className="App">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/main" element={<Main />} />
+        <Route path="/auth_esg" element={<AuthESG />} />
+      </Routes>
+      {!isHome && <MainNavBar />}
+    </div>
   );
 }
 

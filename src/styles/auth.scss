@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 0 3%;
-  height: 85vh;
+  height: 83vh;
   .text_box {
     //  @include tempBorder;
     .title {
@@ -125,7 +125,7 @@
       height: 5vh;
       font-family: "Pretendard-SemiBold";
       font-size: 2.2rem;
-      margin-bottom: 1vh;
+      margin-bottom: 2vh;
     }
     > button:disabled {
       color: rgb(250, 250, 250);

@@ -1,3 +1,12 @@
+$hana-green: rgba(6, 134, 117, 1);
+$hana-red: rgba(215, 30, 62, 1);
+
+@mixin ellipse {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 @mixin tempBorder($color: black) {
   border: 1px solid $color;
 }

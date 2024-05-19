@@ -2,6 +2,7 @@ import React from "react";
 import HomeTopBar from "./HomeTopBar";
 import HomeMidBox from "./HomeMidBox";
 import { HomeBotBox } from "./HomeBotBox";
+import BotNavBar from "./BotNavBar";
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
       <HomeTopBar />
       <HomeMidBox />
       <HomeBotBox />
+      <BotNavBar />
     </div>
   );
 };
