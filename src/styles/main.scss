@@ -47,11 +47,12 @@
       }
     }
     .store_text_box {
+      // @include tempBorder;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       align-items: start;
-      width: 100%;
+      flex-grow: 1;
       height: 12vh;
       margin-left: 10px;
       overflow: hidden;
@@ -65,23 +66,29 @@
       .icon {
         width: auto;
         height: 60%;
-        margin-right: 10px;
+        margin-right: 8px;
       }
-      .name {
-        @include ellipse;
-        @include tempBorder;
-        width: 200px;
-        font-size: 2rem;
-        font-family: "Pretendard-Bold";
+      .name_box {
+        //   @include tempBorder(red);
+        width: 100%;
+        overflow: hidden;
+        .name {
+          @include ellipsis;
+          //  @include tempBorder;
+          width: 250px;
+          font-size: 2rem;
+          font-family: "Pretendard-Bold";
+        }
       }
       .intro_box {
+        //   @include tempBorder(red);
         color: rgba(150, 150, 150, 1);
         width: 100%;
         overflow: hidden;
         .icon {
         }
         .intro {
-          @include ellipse;
+          @include ellipsis;
           width: 200px;
           font-size: 1.3rem;
           font-family: "Pretendard-Regular";

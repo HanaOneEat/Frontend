@@ -9,7 +9,7 @@ const Main = () => {
   const tempStoreInfo = [
     {
       name: "한식뷔페 대가 - 청라점",
-      intro: "저는 기부 중독이에요. 기부 조아!",
+      intro: "저는 기부 중독이에요. 기부 조아",
       score: 4.9,
       reviews: 1234,
       point: 300,
@@ -17,22 +17,22 @@ const Main = () => {
       period: 6,
     },
     {
-      name: "유기농 가구 공방 가구조아가구가구ㅏ구",
-      intro: "저는 기부 중독이에요. 기부 조아!",
-      score: 4.9,
-      reviews: 1234,
-      point: 300,
-      count: 18,
-      period: 6,
+      name: "유기농 가구 공방 가구조아",
+      intro: "우리집.가구는.유기농.나무로만.만듭니다,,^^~*",
+      score: 4.1,
+      reviews: 512,
+      point: 100,
+      count: 12,
+      period: 12,
     },
     {
-      name: "한식뷔페 대가 - 청라점",
-      intro: "저는 기부 중독이에요. 기부 조아!",
-      score: 4.9,
-      reviews: 1234,
-      point: 300,
-      count: 18,
-      period: 6,
+      name: "친환경 비누가게 비누조아",
+      intro: "ESG 최고~, 환경 지켜~, 비누 사조~",
+      score: 4.7,
+      reviews: 2496,
+      point: 27,
+      count: 5,
+      period: 18,
     },
   ];
 
@@ -43,7 +43,9 @@ const Main = () => {
           <img className="store_image" src={tempImage} alt="가게 이미지" />
         </div>
         <div className="store_text_box">
-          <div className="name">{storeInfo.name}</div>
+          <div className="name_box">
+            <div className="name">{storeInfo.name}</div>
+          </div>
           <div className="intro_box">
             <RiMegaphoneFill className="icon" />
             <div className="intro">{storeInfo.intro}</div>
@@ -51,7 +53,10 @@ const Main = () => {
           <div className="score_box">
             <FaStar className="icon" />
             <div className="score">{storeInfo.score}</div>
-            <div className="reviews">({storeInfo.reviews})</div>
+            <div className="reviews">
+              ({storeInfo.reviews >= 1000 ? Math.floor(storeInfo.reviews / 1000) + "," : ""}
+              {storeInfo.reviews % 1000})
+            </div>
           </div>
           <div className="point_box">
             <FaLeaf className="icon" />

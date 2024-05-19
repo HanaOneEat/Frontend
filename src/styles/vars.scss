@@ -1,7 +1,7 @@
 $hana-green: rgba(6, 134, 117, 1);
 $hana-red: rgba(215, 30, 62, 1);
 
-@mixin ellipse {
+@mixin ellipsis {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
