@@ -49,7 +49,7 @@ const AuthESG = () => {
   return (
     <>
       <TopBackNav />
-      <div id="AUTH_container">
+      <div id="AUTH_container" className="cont">
         <div>
           <div className="text_box">
             <div className="title">ESG 인증하기</div>

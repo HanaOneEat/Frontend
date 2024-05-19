@@ -4,6 +4,8 @@
 @use "topbacknav.scss";
 @use "mainnavbar.scss";
 @use "main.scss";
+@use "map.scss";
+@use "storecontent.scss";
 
 @use "font.scss";
 
@@ -11,12 +13,12 @@
 *::before,
 *::after {
   flex-shrink: 0;
+  background: none;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
   overflow-y: hidden;
-  background: none;
   scrollbar-width: none;
 }
 
@@ -25,22 +27,44 @@ html {
 }
 
 img {
-  object-fit: contain;
   width: 100%;
+  object-fit: contain;
 }
 
 .App {
   position: relative;
   z-index: 0;
-  height: 100vh;
   width: 100vw;
+  height: 100vh;
 }
 
 a,
 a:hover,
 a:focus {
   color: inherit;
-  text-decoration: none;
   background-color: none;
+  text-decoration: none;
   outline: none;
+}
+
+.cont {
+  padding: 0 3%;
+  width: 100%;
+  height: 82vh;
+  .text_box {
+    //  @include tempBorder;
+    .title {
+      margin: 1.5% 0;
+      // @include tempBorder(red);
+      font-size: 2.5rem;
+      font-family: "Pretendard-Bold";
+    }
+    .subtext {
+      color: rgb(120, 120, 120);
+      // @include tempBorder(red);
+      font-size: 1.5rem;
+      font-family: "Pretendard-Regular";
+      margin-bottom: 4%;
+    }
+  }
 }
