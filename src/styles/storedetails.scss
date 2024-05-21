@@ -7,9 +7,10 @@
   background: $bg-color;
 
   height: 95vh;
+  overflow-y: scroll;
   > div {
     background-color: white;
-    margin-bottom: 2vw;
+    margin-bottom: 4vw;
   }
   //   * {
   //     @include tempBorder;
@@ -121,6 +122,83 @@
       margin: 3vw 0;
     }
   }
+
+  .graph_box {
+    padding: 3vw;
+    width: 100vw;
+    .title {
+      width: 100vw;
+      height: fit-content;
+      font-family: "Pretendard-Bold";
+      font-size: 2rem;
+      margin-bottom: 2vw;
+    }
+    .content_box {
+      position: relative;
+      overflow: hidden;
+      .graph_container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: end;
+        position: absolute;
+        top: -3%;
+        right: 0;
+        width: 89%;
+        height: 93%;
+        padding-right: 4%;
+        overflow: visible;
+        > * {
+          background-color: rgba(151, 227, 213, 1);
+          //  @include tempBorder(blue);
+          width: 8%;
+          height: 100%;
+          text-align: center;
+          padding-top: 3px;
+          font-family: "Pretendard-Light";
+        }
+        .p_0 {
+          padding-top: 0;
+          position: relative;
+          height: 0;
+          animation: graphAni 1s ease-out;
+          overflow: visible;
+
+          > div {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -100%);
+          }
+        }
+        .p_500 {
+          height: 17.24%;
+          animation: graphAni 1s ease-out;
+        }
+        .p_700 {
+          height: 24.1379%;
+          animation: graphAni 1s ease-out;
+        }
+        .p_1700 {
+          height: 58.62%;
+          animation: graphAni 1s ease-out;
+        }
+        .p_2000 {
+          height: 68.9655%;
+          animation: graphAni 1s ease-out;
+        }
+        .p_2200 {
+          height: 75.862%;
+          animation: graphAni 1s ease-out;
+        }
+        .p_2700 {
+          height: 93.103%;
+          animation: graphAni 1s ease-out;
+        }
+      }
+    }
+  }
+
   .activity_box {
     flex-grow: 1;
     padding: 3vw;

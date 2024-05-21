@@ -39,3 +39,11 @@ $bg-color: linear-gradient(to right, #e9f5ef, #e9f5ef);
     top: 35%;
   }
 }
+
+@keyframes graphAni {
+  from {
+    height: 0;
+  }
+  to {
+  }
+}

@@ -5,6 +5,7 @@ import TopBackNav from "./TopBackNav";
 
 import StoreImage from "../assets/images/Store_2.png";
 import EsgActivs from "../assets/images/Esg_Activities.png";
+import GraphBG from "../assets/images/Graph_bg.png";
 
 import { FaLeaf, FaStar } from "react-icons/fa";
 import { IoLocationSharp } from "react-icons/io5";
@@ -93,12 +94,29 @@ const StoreDetails = () => {
             10:00 ~ 20:00
           </div>
         </div>
+        <div className="graph_box temp_box_shadow">
+          <div className="title">사장님의 ESG 점수 그래프</div>
+          <div className="content_box">
+            <img className="graph_bg" src={GraphBG} alt="그래프 배경" />
+            <div className="graph_container">
+              <div className="g_9 p_0 ">
+                <div>0</div>
+              </div>
+              <div className="g_10 p_500">500</div>
+              <div className="g_11 p_700">500</div>
+              <div className="g_12 p_700">700</div>
+              <div className="g_1 p_1700">700</div>
+              <div className="g_2 p_1700">1700</div>
+              <div className="g_3 p_2000">1700</div>
+              <div className="g_4 p_2200">2200</div>
+              <div className="g_5 p_2700">2700</div>
+            </div>
+          </div>
+        </div>
         <div className="activity_box">
           <div className="title">사장님의 ESG 활동</div>
           <div className="image_box">
-            <>
-              <img src={EsgActivs} alt="ESG 활동 이미지들" />
-            </>
+            <img src={EsgActivs} alt="ESG 활동 이미지들" />
           </div>
         </div>
       </div>
