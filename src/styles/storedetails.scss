@@ -1,0 +1,150 @@
+@import "vars.scss";
+
+#SD_container {
+  background-color: rgb(214, 214, 214);
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+
+  height: 83vh;
+  > div {
+    background-color: white;
+    margin-bottom: 1vw;
+  }
+  //   * {
+  //     @include tempBorder;
+  //   }
+  .image_box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: fit-content;
+    margin-bottom: 0;
+  }
+  .summary_box {
+    padding: 5vw 0;
+    width: 100vw;
+    height: fit-content;
+    .name {
+      width: 100%;
+      text-align: center;
+      font-size: 3rem;
+      font-family: "Pretendard-ExtraBold";
+    }
+    .sentence {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      color: rgb(129, 129, 129);
+      margin: 3vw 0;
+      width: 100%;
+      height: fit-content;
+      text-align: center;
+      font-family: "Pretendard-Light";
+      font-size: 1.8rem;
+      .megaphone_icon {
+        margin-right: 5px;
+      }
+    }
+    .numbers_box {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      * {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.6rem;
+      }
+      .reviews,
+      .duration {
+        color: rgb(87, 87, 87);
+        font-family: "Pretendard-Medium";
+        margin-left: 6px;
+      }
+      .icon {
+        margin-right: 6px;
+      }
+      .left_box {
+        margin-right: 20px;
+        .rating {
+          font-family: "Pretendard-ExtraBold";
+          .star_icon {
+            color: gold;
+          }
+        }
+      }
+      .right_box {
+        .point {
+          font-family: "Pretendard-ExtraBold";
+          .leaf_icon {
+            color: $hana-green;
+          }
+        }
+      }
+    }
+  }
+  .info_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3vw;
+    width: 100vw;
+    height: fit-content;
+    > div {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: center;
+      font-family: "Pretendard-Medium";
+    }
+    * {
+      border: none;
+      flex-wrap: wrap;
+      font-size: 1.6rem;
+    }
+    .icon {
+      color: rgb(190, 190, 190);
+      margin-right: 10px;
+      font-size: 2.1rem;
+    }
+    .icon:last-child {
+      font-size: 2rem;
+    }
+    .phone_number {
+      margin: 3vw 0;
+    }
+  }
+  .activity_box {
+    width: 100vw;
+    flex-grow: 1;
+    margin-bottom: 0;
+    padding: 3vw;
+    .title {
+      width: 100vw;
+      height: fit-content;
+      font-family: "Pretendard-Bold";
+      font-size: 2rem;
+      margin-bottom: 2vw;
+    }
+    .image_box {
+      overflow-y: scroll;
+      height: fit-content;
+      width: 100%;
+      height: 60%;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      padding-bottom: 40%;
+      > img {
+        height: fit-content;
+      }
+    }
+  }
+}

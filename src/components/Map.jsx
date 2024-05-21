@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TopBackNav from "./TopBackNav";
 import StoreContent from "./StoreContent";
+import { Link } from "react-router-dom";
 
 const Map = () => {
   const [thisStore, setThisStore] = useState({
@@ -13,6 +14,8 @@ const Map = () => {
     period: 6,
   });
 
+  const storeId = "test";
+
   return (
     <>
       <TopBackNav />
@@ -22,9 +25,9 @@ const Map = () => {
           <div className="subtext">근처의 ESG 실천 가게의 위치를 나타내요</div>
         </div>
         <div className="map_box"></div>
-        <div className="store_box">
+        <Link className="store_box" to={`/store_details/${storeId}`}>
           <StoreContent storeInfo={thisStore} />
-        </div>
+        </Link>
       </div>
       ;
     </>
