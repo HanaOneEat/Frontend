@@ -1,4 +1,6 @@
 import React from "react";
+import { FaChevronRight, FaLeaf } from "react-icons/fa";
+import { RiCustomerService2Line } from "react-icons/ri";
 import TopBackNav from "./TopBackNav";
 
 const MyPage = () => {
@@ -6,9 +8,58 @@ const MyPage = () => {
     name: "이상준",
     hanaMoney: 22000,
     esgPoint: [
-      { store: "가게 1", point: 100 },
-      { store: "가게 2", point: 100 },
+      // { store: "가게 1", point: 100 },
+      // { store: "가게 2", point: 320 },
+      // { store: "가게 3", point: 60 },
+      // { store: "가게 4", point: 1030 },
     ],
+  };
+
+  const EsgPointContent = ({ list }) => {
+    if (list.length === 0) {
+      return (
+        <div className="list_box without_list">
+          <div className="without_point">
+            보유 매장 정보가 없습니다
+            <div className="call">
+              등록 신청
+              <RiCustomerService2Line className="call_icon" />
+            </div>
+          </div>
+        </div>
+      );
+    }
+    let pointSum = list.reduce((acc, cur) => acc + cur.point, 0);
+    return (
+      <div className="list_box">
+        {list.map((value) => (
+          <div className="per_store">
+            <div className="name">{value.store}</div>
+            <div className="point">
+              {value.point.toLocaleString("ko-KR")}
+              <FaLeaf className="leaf_icon" />
+              <FaChevronRight className="right_icon" />
+            </div>
+          </div>
+        ))}
+        <div className="point_sum">
+          총 {pointSum.toLocaleString("ko-KR")} <FaLeaf className="leaf_icon" />
+        </div>
+      </div>
+    );
+  };
+
+  const ContentList = ({ title, list }) => {
+    return (
+      <div className="content_list_box">
+        <div className="title">{title}</div>
+        <div className="list_box">
+          {list.map((value) => (
+            <div className="list_content">{value}</div>
+          ))}
+        </div>
+      </div>
+    );
   };
 
   return (
@@ -30,10 +81,26 @@ const MyPage = () => {
                 </div>
               </div>
             </div>
-            <div className="esg_point_box"></div>
-            <div className="store_box"></div>
-            <div className="present_box"></div>
-            <div className="cs_box"></div>
+            <div className="esg_point_box content_box">
+              <div className="title">내 ESG 점수</div>
+              <EsgPointContent list={userInfo.esgPoint} />
+            </div>
+            <div className="store_box content_box">
+              <ContentList title={"가게 관리"} list={["가게 등록하기", "ESG 활동 인증하기"]} />
+            </div>
+            <div className="present_box content_box">
+              <ContentList
+                title={"ESG 혜택 상품"}
+                list={[
+                  "ESG 점수 우대 대출 알아보기",
+                  "ESG 포인트 혜택 상점",
+                  "ESG 포인트 등급 확인하기",
+                ]}
+              />
+            </div>
+            <div className="cs_box content_box">
+              <ContentList title={"고객만족센터"} list={["공지사항", "자주 묻는 질문", "FAQ"]} />
+            </div>
           </div>
         </div>
       </div>
