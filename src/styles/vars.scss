@@ -50,27 +50,30 @@ $bg-color: linear-gradient(to right, #e9f5ef, #e9f5ef);
 
 @keyframes myLocAni {
   0% {
-    transform: scale(0.8);
-    // opacity: 0.6;
+    // transform: scale(0.8);
+    opacity: 0.6;
   }
   50% {
-    transform: scale(1);
-    // opacity: 1;
+    // transform: scale(1);
+    opacity: 1;
   }
   100% {
-    transform: scale(0.8);
-    // opacity: 0.6;
+    // transform: scale(0.8);
+    opacity: 0.6;
   }
 }
 
 @keyframes leafAni {
   0% {
-    color: $bright-blue;
+    // color: $bright-blue;
+    transform: scale(0.8);
   }
   50% {
-    color: rgba(100, 100, 100, 0.349);
+    // color: rgba(33, 165, 44, 0.377);
+    transform: scale(1.2);
   }
   100% {
-    color: $bright-blue;
+    // color: $bright-blue;
+    transform: scale(0.8);
   }
 }
