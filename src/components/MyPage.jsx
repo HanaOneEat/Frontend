@@ -1,6 +1,5 @@
 import React from "react";
 import { FaChevronRight, FaLeaf } from "react-icons/fa";
-import { RiCustomerService2Line } from "react-icons/ri";
 import TopBackNav from "./TopBackNav";
 
 import Menu from "../assets/images/Mypage_menu.png";
