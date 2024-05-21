@@ -1,6 +1,7 @@
 $hana-green: rgba(6, 134, 117, 1);
 $hana-red: rgba(215, 30, 62, 1);
-$bright-blue: rgb(8, 218, 172);
+$bright-blue: rgb(19, 200, 189);
+$bg-color: linear-gradient(to right, #e9f5ef, #e9f5ef);
 
 @mixin ellipsis {
   overflow: hidden;

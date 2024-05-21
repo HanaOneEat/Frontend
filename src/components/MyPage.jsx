@@ -3,15 +3,18 @@ import { FaChevronRight, FaLeaf } from "react-icons/fa";
 import { RiCustomerService2Line } from "react-icons/ri";
 import TopBackNav from "./TopBackNav";
 
+import Menu from "../assets/images/Mypage_menu.png";
+import { Link } from "react-router-dom";
+
 const MyPage = () => {
   const userInfo = {
     name: "이상준",
     hanaMoney: 22000,
     esgPoint: [
-      // { store: "가게 1", point: 100 },
-      // { store: "가게 2", point: 320 },
-      // { store: "가게 3", point: 60 },
-      // { store: "가게 4", point: 1030 },
+      { store: "가게 1", point: 100 },
+      { store: "가게 2", point: 320 },
+      { store: "가게 3", point: 60 },
+      { store: "가게 4", point: 1030 },
     ],
   };
 
@@ -20,11 +23,8 @@ const MyPage = () => {
       return (
         <div className="list_box without_list">
           <div className="without_point">
-            보유 매장 정보가 없습니다
-            <div className="call">
-              등록 신청
-              <RiCustomerService2Line className="call_icon" />
-            </div>
+            등록된 가게가 없어요
+            <div className="call">가게 등록하기</div>
           </div>
         </div>
       );
@@ -54,8 +54,10 @@ const MyPage = () => {
       <div className="content_list_box">
         <div className="title">{title}</div>
         <div className="list_box">
-          {list.map((value) => (
-            <div className="list_content">{value}</div>
+          {list.map((value, index) => (
+            <div key={index} className="list_content">
+              {value}
+            </div>
           ))}
         </div>
       </div>
@@ -64,31 +66,33 @@ const MyPage = () => {
 
   return (
     <>
-      <TopBackNav />
+      <TopBackNav noBg={true} />
       <div id="MP_container" className="cont">
         <div className="text_box">
           <div className="title">안녕하세요, {userInfo.name}님!</div>
         </div>
         <div className="scrollable">
           <div>
-            <div className="money_container">
-              <div className="money_box">
-                <div className="title">보유 하나머니</div>
-                <div className="money">{userInfo.hanaMoney.toLocaleString("ko-KR")}원</div>
-                <div className="bot_box">
-                  <div className="free">무료송금</div>
-                  <div className="charge">충전하기</div>
-                </div>
+            <div className="money_box content_box temp_box_shadow">
+              <div className="title">보유 하나머니</div>
+              <div className="money">{userInfo.hanaMoney.toLocaleString("ko-KR")}원</div>
+              <div className="bot_box">
+                <div className="free">무료송금</div>
+                <div className="charge">충전하기</div>
               </div>
             </div>
-            <div className="esg_point_box content_box">
+            <div className="esg_point_box content_box temp_box_shadow">
               <div className="title">내 ESG 점수</div>
               <EsgPointContent list={userInfo.esgPoint} />
             </div>
-            <div className="store_box content_box">
-              <ContentList title={"가게 관리"} list={["가게 등록하기", "ESG 활동 인증하기"]} />
+            <div className="menu_box temp_box_shadow">
+              <Link to="/auth_esg" className="esg_button" />
+              <img className="menu_img" src={Menu} alt="마이페이지 메뉴" />
             </div>
-            <div className="present_box content_box">
+            {/* <div className="store_box content_box">
+              <ContentList title={"가게 관리"} list={["가게 등록하기", "ESG 활동 인증하기"]} />
+            </div> */}
+            {/* <div className="present_box content_box">
               <ContentList
                 title={"ESG 혜택 상품"}
                 list={[
@@ -97,9 +101,12 @@ const MyPage = () => {
                   "ESG 포인트 등급 확인하기",
                 ]}
               />
-            </div>
-            <div className="cs_box content_box">
-              <ContentList title={"고객만족센터"} list={["공지사항", "자주 묻는 질문", "FAQ"]} />
+            </div> */}
+            <div className="cs_box">
+              <ContentList
+                title={"고객만족센터"}
+                list={["공지사항", "자주 묻는 질문", "카카오톡 1:1 문의", "FAQ", "서비스 약관"]}
+              />
             </div>
           </div>
         </div>
