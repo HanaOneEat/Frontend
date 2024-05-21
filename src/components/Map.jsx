@@ -43,7 +43,10 @@ const Map = () => {
           <FaLeaf className="icon loc_b" />
           <FaLeaf className="icon loc_c" />
           <FaLeaf className="icon loc_d" />
-          <FaLeaf className="icon loc_E" onClick={() => setIsClicked(!isClicked)} />
+          <FaLeaf
+            className={`icon loc_E ${isClicked && "bigger"}`}
+            onClick={() => setIsClicked(!isClicked)}
+          />
           <div className="my_loc_box">
             <img className="my_loc" src={MyLoc} alt="내 위치" />
           </div>

@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import TopBackNav from "./TopBackNav";
 
 const AuthESG = () => {
+  const [inputStore, setInputStore] = useState("");
   const [inputTitle, setInputTitle] = useState("");
+  const [inputCategory, setInputCategory] = useState("");
+  const [inputAbout, setInputAbout] = useState("");
   const [inputYear, setInputYear] = useState();
   const [inputMonth, setInputMonth] = useState();
   const [inputDate, setInputDate] = useState();
-  const [inputAbout, setInputAbout] = useState("");
   const [inputFile, setInputFile] = useState([]);
   // const [errorMsg, setErrorMsg] = useState(false);
   const [allFilled, setAllFilled] = useState(false);
@@ -36,6 +38,7 @@ const AuthESG = () => {
 
   useEffect(() => {
     if (
+      inputStore !== "" &&
       inputTitle !== "" &&
       inputYear !== undefined &&
       inputMonth !== undefined &&
@@ -55,6 +58,18 @@ const AuthESG = () => {
             <div className="title">ESG 인증하기</div>
             <div className="subtext">ESG 활동을 인증하고 ESG 점수를 올려요</div>
           </div>
+          <div className="content_box store_box">
+            <div className="top_box">
+              <div className="title">가게</div>
+            </div>
+            <div className={`bot_box ${inputStore.length > 0 ? "hasFilled" : ""}`}>
+              <select>
+                <option>-</option>
+                <option>A</option>
+                <option>A</option>
+              </select>
+            </div>
+          </div>
           <div className="content_box name_box">
             <div className="top_box">
               <div className="title">활동명</div>
@@ -62,7 +77,7 @@ const AuthESG = () => {
             </div>
             <div className="bot_box">
               <input
-                className="input_title"
+                className={`input_title ${inputTitle.length > 0 ? "hasFilled" : ""}`}
                 type="text"
                 value={inputTitle}
                 onChange={(e) => setInputTitle(e.target.value)}
@@ -72,7 +87,18 @@ const AuthESG = () => {
               />
             </div>
           </div>
-
+          <div className="content_box store_box">
+            <div className="top_box">
+              <div className="title">카테고리</div>
+            </div>
+            <div className={`bot_box ${inputCategory.length > 0 ? "hasFilled" : ""}`}>
+              <select>
+                <option>-</option>
+                <option>A</option>
+                <option>A</option>
+              </select>
+            </div>
+          </div>
           <div className="content_box about_box">
             <div className="top_box">
               <div className="title">세부 사항</div>
@@ -80,7 +106,7 @@ const AuthESG = () => {
             </div>
             <div className="bot_box">
               <textarea
-                className="input_about"
+                className={`input_about ${inputAbout.length > 0 ? "hasFilled" : ""}`}
                 value={inputAbout}
                 onChange={(e) => setInputAbout(e.target.value)}
                 maxLength={100}
@@ -96,7 +122,7 @@ const AuthESG = () => {
             </div>
             <div className="bot_box">
               <input
-                className="date_input_box"
+                className={`date_input_box ${inputYear !== undefined ? "hasFilled" : ""}`}
                 type="number"
                 value={inputYear}
                 placeholder="-"
@@ -110,7 +136,7 @@ const AuthESG = () => {
                 년
               </label>
               <input
-                className="date_input_box"
+                className={`date_input_box ${inputMonth !== undefined ? "hasFilled" : ""}`}
                 type="number"
                 value={inputMonth}
                 placeholder="-"
@@ -123,7 +149,7 @@ const AuthESG = () => {
                 월
               </label>
               <input
-                className="date_input_box"
+                className={`date_input_box ${inputDate !== undefined ? "hasFilled" : ""}`}
                 type="number"
                 value={inputDate}
                 placeholder={inputMonth > 0 ? maxDate : "-"}
@@ -145,7 +171,7 @@ const AuthESG = () => {
               </div>
               {/* <div className="sub_right">{inputFile.length}/3</div> */}
             </div>
-            <div className="bot_box">
+            <div className={`bot_box ${inputFile ? "" : "hasFilled"}`}>
               <input
                 type="file"
                 onChange={handleFileChange}
