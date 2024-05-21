@@ -4,18 +4,81 @@
   display: flex;
   flex-direction: column;
   justify-content: start;
+  position: relative;
   padding: 0 0;
   overflow: visible;
+  height: 83vh;
   > .text_box {
     padding: 0 4vw;
   }
   .map_box {
     flex-grow: 1;
+    position: relative;
     background-color: antiquewhite;
     width: 100vw;
+    height: 100vh;
+    .map_bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      object-fit: contain;
+    }
+    .my_loc_box {
+      position: absolute;
+      top: 24vh;
+      left: 50%;
+      z-index: 3;
+      transform: translate(-50%, 0) scale(0.9);
+      .my_loc {
+        animation: myLocAni 1s ease infinite;
+      }
+    }
+    .icon {
+      position: absolute;
+      z-index: 5;
+      color: $bright-blue;
+      font-size: 2.5rem;
+      animation: leafAni 0.8s ease-in-out infinite;
+    }
+    .loc_a {
+      top: 30vw;
+      right: 30%;
+    }
+    .loc_b {
+      top: 40vw;
+      right: 22%;
+    }
+    .loc_c {
+      top: 110vw;
+      left: 25%;
+    }
+    .loc_d {
+      top: 108vw;
+      left: 58%;
+    }
+    .loc_E {
+      top: 65vw;
+      right: 30%;
+    }
   }
-  .store_container {
-    box-shadow: none;
-    margin-top: 3vw;
+  .store_box {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    transform: translate(0, 0);
+    opacity: 1;
+    .store_container {
+      height: 15vh;
+      background-color: none;
+      box-shadow: none;
+      width: 100vw;
+    }
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+  .pop_down {
+    opacity: 0;
+    transform: translate(0, 50%);
   }
 }
