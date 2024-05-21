@@ -7,7 +7,7 @@
   padding: 0 0;
   overflow: visible;
   > .text_box {
-    padding: 0 3%;
+    padding: 0 4vw;
   }
   .map_box {
     flex-grow: 1;
@@ -16,5 +16,6 @@
   }
   .store_container {
     box-shadow: none;
+    margin-top: 3vw;
   }
 }

@@ -2,10 +2,15 @@ import React from "react";
 import TopBackNav from "./TopBackNav";
 import StoreContent from "./StoreContent";
 
+import Store1 from "../assets/images/Store_1.png";
+import Store2 from "../assets/images/Store_2.png";
+import Store3 from "../assets/images/Store_3.jpg";
+
 const Main = () => {
   const tempStoreInfo = [
     {
       name: "한식뷔페 대가 - 청라점",
+      image: Store1,
       intro: "저는 기부 중독이에요. 기부 조아",
       score: 4.9,
       reviews: 1234,
@@ -15,6 +20,7 @@ const Main = () => {
     },
     {
       name: "유기농 가구 공방 가구조아",
+      image: Store2,
       intro: "우리집.가구는.유기농.나무로만.만듭니다,,^^~*",
       score: 4.1,
       reviews: 512,
@@ -24,6 +30,7 @@ const Main = () => {
     },
     {
       name: "친환경 비누가게 비누조아",
+      image: Store3,
       intro: "ESG 최고~, 환경 지켜~, 비누 사조~",
       score: 4.7,
       reviews: 2496,

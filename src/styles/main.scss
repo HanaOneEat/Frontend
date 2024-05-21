@@ -2,4 +2,8 @@
 
 #Main_container {
   // @include tempBorder;
+  padding: 0;
+  .text_box {
+    padding: 0 4vw;
+  }
 }

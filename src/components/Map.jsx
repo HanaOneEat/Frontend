@@ -3,15 +3,18 @@ import TopBackNav from "./TopBackNav";
 import StoreContent from "./StoreContent";
 import { Link } from "react-router-dom";
 
+import Store2 from "../assets/images/Store_2.png";
+
 const Map = () => {
   const [thisStore, setThisStore] = useState({
-    name: "한식뷔페 대가 - 청라점",
-    intro: "저는 기부 중독이에요. 기부 조아",
-    score: 4.9,
-    reviews: 1234,
-    point: 300,
-    count: 18,
-    period: 6,
+    name: "유기농 가구 공방 가구조아",
+    image: Store2,
+    intro: "우리집.가구는.유기농.나무로만.만듭니다,,^^~*",
+    score: 4.1,
+    reviews: 512,
+    point: 100,
+    count: 12,
+    period: 12,
   });
 
   const storeId = "test";

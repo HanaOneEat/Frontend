@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import fetchStoreData from "../utils/fetchStoreData";
 import TopBackNav from "./TopBackNav";
 
-import StoreImage from "../assets/images/Store_detail_image.png";
+import StoreImage from "../assets/images/Store_2.png";
 import EsgActivs from "../assets/images/Esg_Activities.png";
 
 import { FaLeaf, FaStar } from "react-icons/fa";
@@ -51,18 +51,18 @@ const StoreDetails = () => {
 
   return (
     <>
-      <TopBackNav />{" "}
+      <TopBackNav />
       <div id="SD_container">
         <div className="image_box">
           <img className="image" src={StoreImage} alt="매장 사진" />
         </div>
-        <div className="summary_box">
+        <div className="summary_box temp_box_shadow">
           <div className="name">{thisStore.name}</div>
           <div className="sentence">
             <RiMegaphoneFill className="megaphone_icon icon" />
             {thisStore.oneSentence}
           </div>
-          <div className="numbers_box">
+          <div className="numbers_box ">
             <div className="left_box">
               <div className="rating">
                 <FaStar className="star_icon icon" />
@@ -79,7 +79,7 @@ const StoreDetails = () => {
             </div>
           </div>
         </div>
-        <div className="info_box">
+        <div className="info_box temp_box_shadow">
           <div className="locate">
             <IoLocationSharp className="icon" />
             인천 서구 미래로 11 2층

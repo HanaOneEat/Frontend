@@ -8,7 +8,7 @@ const StoreContent = ({ storeInfo }) => {
   return (
     <div className="store_container">
       <div className="store_image_box">
-        <img className="store_image" src={tempImage} alt="가게 이미지" />
+        <img className="store_image" src={storeInfo.image} alt="가게 이미지" />
       </div>
       <div className="store_text_box">
         <div className="name_box">

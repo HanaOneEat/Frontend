@@ -10,7 +10,9 @@ import StoreDetails from "./components/StoreDetails";
 
 function App() {
   const currentLocation = useLocation(); //현재 path
-  const isHome = currentLocation.pathname === "/"; //Home인가
+  const noBotBar =
+    currentLocation.pathname === "/" ||
+    currentLocation.pathname.substring(0, 14) === "/store_details"; //Home인가
 
   return (
     <div className="App">
@@ -22,7 +24,7 @@ function App() {
         <Route path="/auth_esg" element={<AuthESG />} />
         <Route path="store_details/:storeId" element={<StoreDetails />} />
       </Routes>
-      {!isHome && <MainNavBar />}
+      {!noBotBar && <MainNavBar />}
     </div>
   );
 }
