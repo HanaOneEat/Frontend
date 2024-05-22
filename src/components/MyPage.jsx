@@ -15,7 +15,6 @@ import Store3 from "../assets/images/Store_3.png";
 const MyPage = () => {
   const { memberId } = useParams();
   const storeImgList = [Store1, Store2, Store3];
-
   //axios
   const [isLoading, setIsLoading] = useState(true);
   const [userInfo, setUserInfo] = useState(null);
