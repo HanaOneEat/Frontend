@@ -3,6 +3,7 @@ import axios from "axios";
 const fetchUserInfo = async (memberId) => {
   try {
     const response = await axios.get(`http://localhost:8080/members?memberId=${memberId}`);
+    console.log("response : " + response);
     if (response.data) {
       //응답 데이터가 있음
       return response.data;

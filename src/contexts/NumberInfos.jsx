@@ -3,11 +3,11 @@ import React from "react";
 // 초기값 설정
 const initialValue = {
   numberData: [
-    { reviews: 1423, count: 42, duration: 15 },
-    { reviews: 525, count: 13, duration: 5 },
-    { reviews: 92, count: 10, duration: 6 },
-    { reviews: 2402, count: 103, duration: 22 },
-    { reviews: 104, count: 30, duration: 12 },
+    { reviews: 132, count: 22, duration: 4 },
+    { reviews: 48, count: 3, duration: 1 },
+    { reviews: 1207, count: 38, duration: 13 },
+    { reviews: 2402, count: 29, duration: 20 },
+    { reviews: 29, count: 5, duration: 2 },
   ],
   updateNumberData: () => {}, // 빈 함수로 초기화
 };

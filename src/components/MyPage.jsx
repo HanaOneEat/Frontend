@@ -14,21 +14,12 @@ import Store3 from "../assets/images/Store_3.png";
 
 const MyPage = () => {
   const { memberId } = useParams();
-
-  const tempUserInfo = {
-    name: "이상준",
-    hanaMoney: 22000,
-    esgPoint: [
-      { store: "가게 1", img: Store1, point: 100 },
-      { store: "가게 2", img: Store2, point: 320 },
-      { store: "가게 3", img: Store3, point: 60 },
-    ],
-  };
+  const storeImgList = [Store1, Store2, Store3];
 
   //axios
   const [isLoading, setIsLoading] = useState(false);
-  const [storeOfUser, setStoreOfUser] = useState(null);
   const [userInfo, setUserInfo] = useState(null);
+  const [storeOfUser, setStoreOfUser] = useState(null);
   useEffect(() => {
     const loadAllData = async () => {
       setIsLoading(true);
@@ -36,13 +27,15 @@ const MyPage = () => {
       const resDataStore = await fetchStoreOfUser(memberId);
       setUserInfo(resDataUser);
       setStoreOfUser(resDataStore);
-      isLoading(false);
+      setIsLoading(false);
+      console.log("memgerId : ", memberId);
+      console.log("uesr : ", resDataUser);
+      console.log("stores : ", resDataStore);
     };
-    console.log("memgerId : " + memberId);
-    // loadAllData();
+    loadAllData();
   }, []);
 
-  if (isLoading) {
+  if (isLoading || !userInfo || !storeOfUser) {
     return (
       <div>
         <Loading />
@@ -60,17 +53,18 @@ const MyPage = () => {
         </div>
       );
     }
-    let pointSum = list.reduce((acc, cur) => acc + cur.point, 0);
+    let pointSum = list.reduce((acc, cur) => acc + cur.esgScore, 0);
     return (
       <div className="list_box">
         <div className="whole_store_box">
           {list.map((value, index) => (
             <Link key={index} to={`/store_details/${index + 1}`}>
               <div className="per_store">
-                <div className="name">{value.store}</div>
-                <img src={value.img} alt="가게 이미지" />
+                <div className="name">가게 {index + 1}</div>
+                {/* <div className="name">{value.name}</div> */}
+                <img src={storeImgList[index]} alt="가게 이미지" />
                 <div className="point">
-                  {value.point.toLocaleString("ko-KR")}
+                  {value.esgScore.toLocaleString("ko-KR")}
                   <FaLeaf className="leaf_icon" />
                   <FaChevronRight className="right_icon" />
                 </div>
@@ -79,7 +73,7 @@ const MyPage = () => {
           ))}
         </div>
         <div className="point_sum">
-          총 {pointSum.toLocaleString("ko-KR")} <FaLeaf className="leaf_icon" />
+          총 {pointSum} <FaLeaf className="leaf_icon" />
         </div>
       </div>
     );
@@ -100,28 +94,19 @@ const MyPage = () => {
     );
   };
 
-  // {storeInfo && (
-  //   <Link
-  //     className={`store_box ${isClicked ? "" : "pop_down"}`}
-  //     to={`/store_details/${selected}`}
-  //   >
-  //     <StoreContent storeInfo={storeInfo} index={selected - 1} />
-  //   </Link>
-  // )}
-
   return (
     <>
       <TopBackNav noBg={true} />
       <div id="MP_container" className="cont">
         <>
           <div className="text_box">
-            <div className="title">안녕하세요, {tempUserInfo.name}님!</div>
+            <div className="title">안녕하세요, {userInfo.name}님!</div>
           </div>
           <div className="scrollable">
             <div>
               <div className="money_box content_box temp_box_shadow">
                 <div className="title">보유 하나머니</div>
-                <div className="money">{tempUserInfo.hanaMoney.toLocaleString("ko-KR")}원</div>
+                <div className="money">{userInfo.money.toLocaleString("ko-KR")}원</div>
                 <div className="bot_box">
                   <div className="free">무료송금</div>
                   <div className="charge">충전하기</div>
@@ -129,7 +114,7 @@ const MyPage = () => {
               </div>
               <div className="esg_point_box content_box temp_box_shadow">
                 <div className="title">내 ESG 점수</div>
-                <EsgPointContent list={tempUserInfo.esgPoint} />
+                <EsgPointContent list={storeOfUser.storeMyList} />
               </div>
               <div className="menu_box temp_box_shadow">
                 <Link to="/auth_esg" className="esg_button" />
