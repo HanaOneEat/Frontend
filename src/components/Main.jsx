@@ -6,6 +6,7 @@ import fetchAllStores from "../utils/fetchAllStores";
 import Loading from "./Loading";
 import NumberInfos from "../contexts/NumberInfos";
 import { Link } from "react-router-dom";
+import Landing from "./Landing";
 
 const Main = () => {
   //contextAPI
@@ -14,6 +15,8 @@ const Main = () => {
   //axios
   const [storeList, setStoreList] = useState(null);
   const [isLoading, setIsLoading] = useState(false); //초기 로드값 일단 false
+  const [isLanding, setIsLanding] = useState(true);
+
   useEffect(() => {
     const loadAllStores = async () => {
       setIsLoading(true);
@@ -22,6 +25,13 @@ const Main = () => {
       setIsLoading(false);
     };
     loadAllStores();
+
+    const timer = setTimeout(() => {
+      // setIsLanding(false);
+      console.log("타임");
+    }, 2000);
+
+    return () => clearTimeout(timer);
   }, []);
 
   if (isLoading) {
@@ -39,6 +49,7 @@ const Main = () => {
   return (
     <>
       <TopBackNav />
+      {isLanding && <Landing />}
       <div id="Main_container" className="cont">
         <div className="text_box">
           <div className="title">ESG 가게 목록</div>

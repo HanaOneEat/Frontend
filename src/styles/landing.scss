@@ -1,0 +1,76 @@
+@import "vars.scss";
+
+#Landing_container {
+  display: grid;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: white;
+  padding: 0 5%;
+  width: 100vw;
+  height: 100vh;
+  place-content: center;
+  .box {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    .ani_box {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 25%;
+      left: 0;
+      background-color: white;
+      width: 100%;
+      height: 30%;
+      .but_bg {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        align-items: center;
+        background-color: #13c8bd;
+        border-radius: 100px;
+        position: relative;
+        padding: 0 3%;
+        width: 35%;
+        height: 75%;
+        animation: landingAni_but_bg 1.5s ease;
+        .text {
+          position: absolute;
+          top: 50%;
+          left: 15%;
+          color: white;
+          font-family: "Montserrat-Bold";
+          font-size: 3rem;
+          transform: translateY(-50%);
+          z-index: 3;
+        }
+        .cover {
+          z-index: 5;
+          display: flex;
+          flex-direction: row;
+          justify-content: start;
+          align-items: center;
+          width: 8vw;
+          //  flex-grow: 1;
+          animation: landingAni_cover 1.5s ease;
+        }
+        .icon {
+          color: #13c8bd;
+          background-color: white;
+          border-radius: 100px;
+          padding: 1.3vw;
+          width: 8vw;
+          height: 8vw;
+
+          animation: landingAni_icon 1.5s ease;
+
+          overflow: visible;
+        }
+      }
+    }
+  }
+}

@@ -10,10 +10,6 @@ const InputAmount = () => {
   const [amount, setAmount] = useState(0);
   const [isDone, setIsDone] = useState(false);
 
-  useEffect(() => {
-    console.log("연결됨 ; " + toId);
-  }, []);
-
   const sendAll = () => {
     //  console.log("데이터", toId, amount);
     sendMoney(1, amount)
