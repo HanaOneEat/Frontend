@@ -25,8 +25,8 @@ const MainNavBar = () => {
           <div className="text_box">하나머니</div>
         </Link>
         <Link
-          className={`button_box ${isActive("/main/" || "/main/back") ? "active" : ""}`}
-          to="/main/"
+          className={`button_box ${isActive("/main" || "/main/first") ? "active" : ""}`}
+          to="/main"
         >
           <div className="icon_box">
             <FaClipboardList className="icon" />

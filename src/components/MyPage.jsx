@@ -33,12 +33,9 @@ const MyPage = () => {
   }, []);
 
   if (isLoading || !userInfo || !storeOfUser) {
-    return (
-      <div>
-        <Loading />
-      </div>
-    );
+    return <div>{/* <Loading /> */}</div>;
   }
+
   const EsgPointContent = ({ list }) => {
     if (list.length === 0) {
       return (

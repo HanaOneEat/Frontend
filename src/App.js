@@ -26,7 +26,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/main" element={<Main />} />
-        <Route path="/main/:back" element={<Main />} />
+        <Route path="/main/:first" element={<Main />} />
         <Route path="/map" element={<Map />} />
         <Route path="/my_page/:memberId" element={<MyPage />} />
         <Route path="/auth_esg" element={<AuthESG />} />

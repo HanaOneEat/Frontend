@@ -11,19 +11,19 @@ import Landing from "./Landing";
 const Main = () => {
   //contextAPI
   const { numberData, updateNumberData } = useContext(NumberInfos);
-  const { back } = useParams();
+  const { first } = useParams();
 
   //axios
   const [storeList, setStoreList] = useState(null);
-  const [isLoading, setIsLoading] = useState(false); //초기 로드값 일단 false
-  const [isLanding, setIsLanding] = useState(!back);
+  // const [isLoading, setIsLoading] = useState(false); //초기 로드값 일단 false
+  const [isLanding, setIsLanding] = useState(first);
 
   useEffect(() => {
     const loadAllStores = async () => {
-      setIsLoading(true);
+      // setIsLoading(true);
       const resData = await fetchAllStores();
       setStoreList(resData);
-      setIsLoading(false);
+      // setIsLoading(false);
     };
     loadAllStores();
 
@@ -34,13 +34,13 @@ const Main = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  if (isLoading) {
-    return (
-      <div>
-        <Loading />
-      </div>
-    );
-  }
+  // if (isLoading) {
+  //   return (
+  //     <div>
+  //       <Loading />
+  //     </div>
+  //   );
+  // }
 
   // if (!storeList) {
   //   return <div>주변에 가게가 존재하지 않습니다.</div>;

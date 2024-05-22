@@ -1,0 +1,125 @@
+@import "vars.scss";
+
+#Loading_container {
+  /* truck suspension animation*/
+  @keyframes motion {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(3px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  @keyframes roadAnimation {
+    0% {
+      transform: translateX(0px);
+    }
+    100% {
+      transform: translateX(-350px);
+    }
+  }
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  .fa_icon {
+    position: absolute;
+    top: 42%;
+    left: 20%;
+    z-index: 45;
+    color: #13c8bd;
+    background-color: white;
+    padding: 5px;
+    border-radius: 100px;
+    width: 9vw;
+    height: 9vw;
+    transform: translate(0, -50%);
+    overflow: visible;
+  }
+  .loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+  }
+
+  .truckWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    width: 200px;
+    height: 100px;
+    overflow-x: hidden;
+  }
+  /* truck upper body */
+  .truckBody {
+    width: 130px;
+    height: fit-content;
+    margin-bottom: 6px;
+    animation: motion 1s linear infinite;
+  }
+  /* truck's tires */
+  .truckTires {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    padding: 0px 10px 0px 15px;
+    width: 130px;
+    height: fit-content;
+  }
+  .truckTires svg {
+    width: 24px;
+  }
+
+  .road {
+    align-self: flex-end;
+    position: relative;
+    bottom: 0;
+    background-color: #282828;
+    border-radius: 3px;
+    width: 100%;
+    height: 1.5px;
+  }
+  .road::before {
+    position: absolute;
+    right: -50%;
+    background-color: #282828;
+    border-radius: 3px;
+    width: 20px;
+    height: 100%;
+    content: "";
+    animation: roadAnimation 1.4s linear infinite;
+    border-left: 10px solid white;
+  }
+  .road::after {
+    position: absolute;
+    right: -65%;
+    background-color: #282828;
+    border-radius: 3px;
+    width: 10px;
+    height: 100%;
+    content: "";
+    animation: roadAnimation 1.4s linear infinite;
+    border-left: 4px solid white;
+  }
+
+  .lampPost {
+    position: absolute;
+    right: -90%;
+    bottom: 0;
+    z-index: 50;
+    height: 90px;
+    animation: roadAnimation 1.4s linear infinite;
+  }
+}

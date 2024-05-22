@@ -32,7 +32,7 @@ const StoreDetails = () => {
 
   //axios
   const [thisStore, setThisStore] = useState(null);
-  const [isLoading, setIsLoading] = useState(false); //초기 로드값 일단false
+  const [isLoading, setIsLoading] = useState(true); //초기 로드값 일단false
   useEffect(() => {
     const loadStoreData = async () => {
       setIsLoading(true);
