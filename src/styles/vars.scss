@@ -86,3 +86,15 @@ $bg-color: linear-gradient(to right, #e9f5ef, #e9f5ef);
     transform: scale(2);
   }
 }
+
+@keyframes scanAni {
+  0% {
+    border-color: rgba(214, 193, 0, 0.856);
+  }
+  50% {
+    border-color: rgba(190, 171, 0, 0.486);
+  }
+  100% {
+    border-color: rgba(214, 193, 0, 0.856);
+  }
+}
