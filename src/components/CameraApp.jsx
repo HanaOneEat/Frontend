@@ -3,10 +3,13 @@ import TopBackNav from "./TopBackNav";
 import QrScanner from "react-qr-scanner";
 
 import CameraBG from "../assets/images/Camera_bg.png";
+import sendMoney from "../utils/sendMoney";
+import { useNavigate } from "react-router-dom";
 
 const CameraApp = () => {
   const videoRef = useRef(null);
-  const [data, setData] = useState("No result");
+  //   const [toIdData, setToIdData] = useState(null);
+  const navigate = useNavigate();
 
   const handleStartCamera = async () => {
     try {
@@ -27,10 +30,14 @@ const CameraApp = () => {
     console.error(error);
   };
 
-  const handleQrScan = (data) => {
-    if (data) {
-      setData(data.text);
-      console.log("QR 인식 값 : ", data.text);
+  const handleQrScan = (inputData) => {
+    if (inputData) {
+      // setToIdData(inputData.text);
+      //JSON문자열을 객체로 변환
+      const parsedData = JSON.parse(inputData.text);
+      // console.log("보내기 전 : " + parsedData.toId);
+      //toId값 출력
+      navigate(`/input_amount/${JSON.parse(parsedData.toId)}`);
     }
   };
 
@@ -38,6 +45,7 @@ const CameraApp = () => {
     <>
       <TopBackNav />
       <div id="CA_container">
+        <img src={CameraBG} alt="카메라 배경" />
         <div className="title">코드 스캔</div>
         <QrScanner
           delay={300}
@@ -45,7 +53,6 @@ const CameraApp = () => {
           onScan={handleQrScan}
           className="camera_on"
         />
-        <img src={CameraBG} alt="카메라 배경" />
         <div className="scan_rct_box">
           <div className="ul_border" />
           <div className="ur_border" />

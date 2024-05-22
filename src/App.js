@@ -9,15 +9,17 @@ import MyPage from "./components/MyPage";
 import StoreDetails from "./components/StoreDetails";
 import { Axios } from "axios";
 import CameraApp from "./components/CameraApp";
+import InputAmount from "./components/InputAmount";
 
 // Axios.defaults.baseURL = "http://localhost:8080";
 
 function App() {
-  const currentLocation = useLocation(); //현재 path
+  const currentLocation = useLocation().pathname; //현재 path
   const noBotBar =
-    currentLocation.pathname === "/" ||
-    currentLocation.pathname.substring(0, 14) === "/store_details" || //Home인가
-    currentLocation.pathname === "/camera";
+    currentLocation === "/" ||
+    currentLocation.substring(0, 14) === "/store_details" || //Home인가
+    currentLocation === "/camera" ||
+    currentLocation.substring(0, 13) === "/input_amount";
 
   return (
     <div className="App">
@@ -29,6 +31,7 @@ function App() {
         <Route path="/auth_esg" element={<AuthESG />} />
         <Route path="store_details/:storeId" element={<StoreDetails />} />
         <Route path="/camera" element={<CameraApp />} />
+        <Route path="/input_amount/:toId" element={<InputAmount />} />
       </Routes>
       {!noBotBar && <MainNavBar />}
     </div>
