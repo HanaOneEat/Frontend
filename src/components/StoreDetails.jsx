@@ -38,7 +38,10 @@ const StoreDetails = () => {
       setIsLoading(true);
       const resData = await fetchStoreData(storeId);
       setThisStore(resData);
-      setIsLoading(false);
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+      }, 500);
+      return () => clearTimeout(timer);
     };
 
     loadStoreData();

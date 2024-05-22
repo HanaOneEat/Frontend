@@ -17,7 +17,7 @@ const MyPage = () => {
   const storeImgList = [Store1, Store2, Store3];
 
   //axios
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [userInfo, setUserInfo] = useState(null);
   const [storeOfUser, setStoreOfUser] = useState(null);
   useEffect(() => {
@@ -27,13 +27,20 @@ const MyPage = () => {
       const resDataStore = await fetchStoreOfUser(memberId);
       setUserInfo(resDataUser);
       setStoreOfUser(resDataStore);
-      setIsLoading(false);
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+      }, 500);
+      return () => clearTimeout(timer);
     };
     loadAllData();
   }, []);
 
   if (isLoading || !userInfo || !storeOfUser) {
-    return <div>{/* <Loading /> */}</div>;
+    return (
+      <div>
+        <Loading />
+      </div>
+    );
   }
 
   const EsgPointContent = ({ list }) => {
