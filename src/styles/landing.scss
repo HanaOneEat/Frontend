@@ -37,7 +37,7 @@
         padding: 0 3%;
         width: 35%;
         height: 75%;
-        animation: landingAni_but_bg 1.5s ease;
+        animation: landingAni_but_bg 1.2s ease-in-out;
         .text {
           position: absolute;
           top: 50%;
@@ -56,7 +56,7 @@
           align-items: center;
           width: 8vw;
           //  flex-grow: 1;
-          animation: landingAni_cover 1.5s ease;
+          animation: landingAni_cover 1.2s ease-in-out;
         }
         .icon {
           color: #13c8bd;
@@ -66,7 +66,7 @@
           width: 8vw;
           height: 8vw;
 
-          animation: landingAni_icon 1.5s ease;
+          animation: landingAni_icon 1.2s ease-in-out;
 
           overflow: visible;
         }
