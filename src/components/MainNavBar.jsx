@@ -24,17 +24,17 @@ const MainNavBar = () => {
           </div>
           <div className="text_box">하나머니</div>
         </Link>
+        <Link className={`button_box ${isActive("/main") ? "active" : ""}`} to="/main">
+          <div className="icon_box">
+            <FaClipboardList className="icon" />
+          </div>
+          <div className="text_box">목록</div>
+        </Link>
         <Link className={`button_box ${isActive("/map") ? "active" : ""}`} to="/map">
           <div className="icon_box">
             <FaMap className="icon" />
           </div>
           <div className="text_box">지도</div>
-        </Link>
-        <Link className={`button_box ${isActive("/main") ? "active" : ""}`} to="/main">
-          <div className="icon_box">
-            <FaClipboardList className="icon" />
-          </div>
-          <div className="text_box">가게 목록</div>
         </Link>
         <Link className={`button_box ${isActive("/auth_esg") ? "active" : ""}`} to="/auth_esg">
           <div className="icon_box">

@@ -1,0 +1,28 @@
+@import "vars.scss";
+
+#CA_container {
+  width: 100vw;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  video {
+    width: 100vw;
+    height: auto;
+  }
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    height: 100vh;
+    width: 100vh;
+  }
+  button {
+    width: 100px;
+    height: 50px;
+  }
+}
