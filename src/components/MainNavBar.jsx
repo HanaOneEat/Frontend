@@ -1,9 +1,10 @@
 import React, { useContext, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-import { FaHome, FaLeaf, FaMap, FaSearch, FaUserCircle } from "react-icons/fa";
+import { FaClipboardList, FaHome, FaLeaf, FaMap, FaSearch, FaUserCircle } from "react-icons/fa";
 import TopBackNav from "./TopBackNav";
 import UserId from "../contexts/UserId";
+import HanaLogo from "../assets/images/hanamoney_logo.png";
 
 const MainNavBar = () => {
   const location = useLocation();
@@ -16,11 +17,12 @@ const MainNavBar = () => {
   return (
     <div id="MNB_container">
       <div className="nav_box">
-        <Link className={`button_box ${isActive("/main") ? "active" : ""}`} to="/main">
-          <div className="icon_box">
-            <FaHome className="icon" />
+        <Link className={`button_box ${isActive("/search") ? "active" : ""}`} to="/">
+          <div className="logo_img">
+            <img src={HanaLogo} alt="하나머니 로고" />
+            {/* <FaSearch className="icon" /> */}
           </div>
-          <div className="text_box">홈</div>
+          <div className="text_box">하나머니</div>
         </Link>
         <Link className={`button_box ${isActive("/map") ? "active" : ""}`} to="/map">
           <div className="icon_box">
@@ -28,11 +30,11 @@ const MainNavBar = () => {
           </div>
           <div className="text_box">지도</div>
         </Link>
-        <Link className={`button_box ${isActive("/search") ? "active" : ""}`} to="/search">
+        <Link className={`button_box ${isActive("/main") ? "active" : ""}`} to="/main">
           <div className="icon_box">
-            <FaSearch className="icon" />
+            <FaClipboardList className="icon" />
           </div>
-          <div className="text_box">검색</div>
+          <div className="text_box">가게 목록</div>
         </Link>
         <Link className={`button_box ${isActive("/auth_esg") ? "active" : ""}`} to="/auth_esg">
           <div className="icon_box">
