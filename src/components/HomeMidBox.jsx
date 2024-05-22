@@ -6,6 +6,7 @@ import Hanamoney_logo from "../assets/images/hanamoney_logo.png";
 import Earth from "../assets/images/earth.png";
 import NewIcon from "../assets/images/New_ver1.png";
 import Travellog from "../assets/images/travellog_img.png";
+import HanaeonLogo from "../assets/images/Hanaeon_logo.png";
 
 const HomeMidBox = () => {
   return (
@@ -31,11 +32,18 @@ const HomeMidBox = () => {
               <img className="new_icon" src={NewIcon} alt="New 아이콘 이미지" />
             </div>
             <div className="top_box">
-              <div className="logo_box"></div>
-              <div className="title">
-                하나원잇
-                <br />
-                소개글
+              <div className="logo_box">
+                <img src={HanaeonLogo} alt="하나이온 로고" />
+              </div>
+              <div className="text_box">
+                <div className="title">하나이온</div>
+                <div className="about">
+                  손님과 가게를
+                  <br />
+                  하나로 연결하는
+                  <br />
+                  <div>ESG 플랫폼</div>
+                </div>
               </div>
             </div>
             <Link to="main/first" className="bot_button">
