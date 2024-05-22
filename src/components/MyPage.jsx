@@ -28,9 +28,6 @@ const MyPage = () => {
       setUserInfo(resDataUser);
       setStoreOfUser(resDataStore);
       setIsLoading(false);
-      console.log("memgerId : ", memberId);
-      console.log("uesr : ", resDataUser);
-      console.log("stores : ", resDataStore);
     };
     loadAllData();
   }, []);

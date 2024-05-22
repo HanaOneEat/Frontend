@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import fetchStoreData from "../utils/fetchStoreData";
 import TopBackNav from "./TopBackNav";
@@ -18,11 +18,17 @@ import Store2 from "../assets/images/Store_2.jpg";
 import Store3 from "../assets/images/Store_3.png";
 import Store4 from "../assets/images/Store_4.jpg";
 import Store5 from "../assets/images/Store_5.jpg";
+import Store6 from "../assets/images/Store_6.jpg";
+import NumberInfos from "../contexts/NumberInfos";
 
 const StoreDetails = () => {
   const { storeId } = useParams();
 
-  const imageList = [Store1, Store2, Store3, Store4, Store5];
+  //contextAPI
+  const { numberData, updateNumberData } = useContext(NumberInfos);
+  const currentData = numberData[storeId - 1] || { reviews: 0, count: 0, duration: 0 }; // 기본값 제공
+
+  const imageList = [Store1, Store2, Store3, Store4, Store5, Store6];
 
   //axios
   const [thisStore, setThisStore] = useState(null);
@@ -69,14 +75,16 @@ const StoreDetails = () => {
                 <FaStar className="star_icon icon" />
                 {thisStore.rating}
               </div>
-              <div className="reviews">(2,496)</div>
+              <div className="reviews">({currentData.reviews.toLocaleString("ko-KR")})</div>
             </div>
             <div className="right_box">
               <div className="point">
                 <FaLeaf className="leaf_icon icon" />
                 {thisStore.esgScore}
               </div>
-              <div className="duration">(5회/18개월)</div>
+              <div className="duration">
+                ({currentData.count.toLocaleString("ko-KR")}회/{currentData.duration}개월)
+              </div>
             </div>
           </div>
         </div>

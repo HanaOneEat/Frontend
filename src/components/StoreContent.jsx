@@ -9,12 +9,15 @@ import Store2 from "../assets/images/Store_2.jpg";
 import Store3 from "../assets/images/Store_3.png";
 import Store4 from "../assets/images/Store_4.jpg";
 import Store5 from "../assets/images/Store_5.jpg";
+import Store6 from "../assets/images/Store_6.jpg";
 import NumberInfos from "../contexts/NumberInfos";
 
 const StoreContent = ({ storeInfo, index }) => {
   const { numberData, updateNumberData } = useContext(NumberInfos);
 
-  const imageList = [Store1, Store2, Store3, Store4, Store5];
+  // 유효성 검사를 통한 안전한 접근
+  const currentData = numberData[index] || { reviews: 0, count: 0, duration: 0 }; // 기본값 제공
+  const imageList = [Store1, Store2, Store3, Store4, Store5, Store6];
 
   return (
     <div className="store_container">
@@ -32,13 +35,13 @@ const StoreContent = ({ storeInfo, index }) => {
         <div className="score_box">
           <FaStar className="icon" />
           <div className="score">{storeInfo.rating}</div>
-          <div className="reviews">({numberData[index].reviews.toLocaleString("ko-KR")})</div>
+          <div className="reviews">({currentData.reviews.toLocaleString("ko-KR")})</div>
         </div>
         <div className="point_box">
           <FaLeaf className="icon" />
           <div className="point">{storeInfo.esgScore}</div>
           <div className="count_box">
-            ({numberData[index].count.toLocaleString("ko-KR")}회/{numberData[index].duration}개월)
+            ({currentData.count.toLocaleString("ko-KR")}회/{currentData.duration}개월)
           </div>
         </div>
       </div>

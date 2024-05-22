@@ -3,6 +3,7 @@
 #Main_container {
   // @include tempBorder;
   padding: 0;
+  overflow: scroll;
   .text_box {
     padding: 0 4vw;
   }

@@ -1,11 +1,27 @@
 import React, { useEffect, useState } from "react";
 import TopBackNav from "./TopBackNav";
-import fetchAuthData from "../utils/fetchAuthData";
+import fetchUserInfo from "../utils/fetchUserInfo";
+import fetchStoreOfUser from "../utils/fetchStoreOfUser";
 
 const AuthESG = () => {
-  const [inputStore, setInputStore] = useState("");
+  const categoryList = [
+    "일회용품 대신 다회용품 사용(영수증 인증)",
+    "다회용품 사용",
+    "산책을 하며 쓰레기 줍기",
+    "플로깅",
+    "기부 활동 수행",
+    "기부",
+    "봉사 활동 수행",
+    "봉사",
+    "헌혈 활동 수행",
+    "헌혈",
+  ];
+
+  const storeList = ["유기농 가구 공방 가구조아", "친환경 비누가게 비누조아", "한식뷔페 대가"];
+
+  const [inputStore, setInputStore] = useState("유기농 가구 공방 가구조아");
   const [inputTitle, setInputTitle] = useState("");
-  const [inputCategory, setInputCategory] = useState("");
+  const [inputCategory, setInputCategory] = useState("일회용품 대신 다회용품 사용(영수증 인증)");
   const [inputAbout, setInputAbout] = useState("");
   const [inputYear, setInputYear] = useState();
   const [inputMonth, setInputMonth] = useState();
@@ -52,17 +68,6 @@ const AuthESG = () => {
 
   //axios
   const [isLoading, setIsLoading] = useState(false);
-  const [esgData, setEsgData] = useState(null);
-  useEffect(() => {
-    const loadEsgData = async () => {
-      setIsLoading(true);
-      const resData = fetchAuthData();
-      setEsgData(resData);
-      setIsLoading(false);
-    };
-
-    //loadEsgData()
-  }, []);
 
   return (
     <>
@@ -77,11 +82,13 @@ const AuthESG = () => {
             <div className="top_box">
               <div className="title">가게</div>
             </div>
-            <div className={`bot_box ${inputStore.length > 0 ? "hasFilled" : ""}`}>
-              <select>
-                <option>-</option>
-                <option>A</option>
-                <option>A</option>
+            <div className={`bot_box ${inputStore !== "-" ? "hasFilled" : ""}`}>
+              <select onChange={(e) => setInputStore(e.target.value)}>
+                {storeList.map((value, index) => (
+                  <option value={value} key={index}>
+                    {value}
+                  </option>
+                ))}
               </select>
             </div>
           </div>
@@ -106,11 +113,14 @@ const AuthESG = () => {
             <div className="top_box">
               <div className="title">카테고리</div>
             </div>
-            <div className={`bot_box ${inputCategory.length > 0 ? "hasFilled" : ""}`}>
-              <select>
-                <option>-</option>
-                <option>A</option>
-                <option>A</option>
+            <div className={`bot_box ${inputCategory !== "-" ? "hasFilled" : ""}`}>
+              <select onChange={(e) => setInputCategory(e.target.value)}>
+                {/* <option>-</option> */}
+                {categoryList.map((value, index) => (
+                  <option value={value} key={index}>
+                    {value}
+                  </option>
+                ))}
               </select>
             </div>
           </div>

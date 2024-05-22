@@ -10,13 +10,12 @@ import { FaLeaf } from "react-icons/fa";
 import fetchStoreData from "../utils/fetchStoreData";
 
 const Map = () => {
-  const [selected, setSelected] = useState(-1);
-  const [storeInfo, setStoreInfo] = useState(null);
+  const [selected, setSelected] = useState(1);
+  const [storeInfo, setStoreInfo] = useState({ name: "", oneSentence: "", rating: 0, esgScore: 0 });
   const [isClicked, setIsClicked] = useState(false);
 
   const activeLeaf = async (index) => {
     if (index === selected) {
-      setSelected(-1);
       setIsClicked(false);
     } else {
       setSelected(index);
@@ -67,14 +66,12 @@ const Map = () => {
             <img className="my_loc" src={MyLoc} alt="내 위치" />
           </div>
         </div>
-        {storeInfo && (
-          <Link
-            className={`store_box ${isClicked ? "" : "pop_down"}`}
-            to={`/store_details/${selected}`}
-          >
-            <StoreContent storeInfo={storeInfo} index={selected - 1} />
-          </Link>
-        )}
+        <Link
+          className={`store_box ${isClicked ? "" : "pop_down"}`}
+          to={`/store_details/${selected}`}
+        >
+          <StoreContent storeInfo={storeInfo} index={selected - 1} />
+        </Link>
       </div>
       ;
     </>

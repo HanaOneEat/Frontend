@@ -8,6 +8,7 @@ const initialValue = {
     { reviews: 1207, count: 38, duration: 13 },
     { reviews: 2402, count: 29, duration: 20 },
     { reviews: 29, count: 5, duration: 2 },
+    { reviews: 12, count: 10, duration: 3 },
   ],
   updateNumberData: () => {}, // 빈 함수로 초기화
 };

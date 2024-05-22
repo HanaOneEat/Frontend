@@ -22,7 +22,6 @@ const Main = () => {
       setIsLoading(false);
     };
     loadAllStores();
-    console.log(numberData);
   }, []);
 
   if (isLoading) {
@@ -45,9 +44,9 @@ const Main = () => {
           <div className="title">ESG 가게 목록</div>
           <div className="subtext">근처의 ESG 활동을 실천 중인 가게 목록이에요</div>
         </div>
-        {storeList &&
+        {storeList !== null &&
           storeList.map((value, index) => (
-            <Link to={`/store_details/${index + 1}`}>
+            <Link key={index} to={`/store_details/${index + 1}`}>
               <StoreContent key={index} storeInfo={value} index={index} />
             </Link>
           ))}
