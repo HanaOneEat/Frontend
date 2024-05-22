@@ -210,7 +210,7 @@
     width: 100vw;
     height: 95vh;
     background-color: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
     animation: blurDoneAni 1s ease-out;
 
     z-index: 10;
