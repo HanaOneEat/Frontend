@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import TopBackNav from "./TopBackNav";
 import fetchUserInfo from "../utils/fetchUserInfo";
 import fetchStoreOfUser from "../utils/fetchStoreOfUser";
+import { useNavigate } from "react-router-dom";
 
 const AuthESG = () => {
   const categoryList = [
@@ -33,6 +34,10 @@ const AuthESG = () => {
   const [maxDate, setMaxDate] = useState(0);
 
   const maxYear = 2024;
+
+  const [popModal, setPopModal] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleFileChange = (event) => {
     setInputFile(event.target.file);
@@ -66,13 +71,24 @@ const AuthESG = () => {
     }
   }, [inputTitle, inputYear, inputMonth, inputDate, inputAbout]);
 
-  //axios
-  const [isLoading, setIsLoading] = useState(false);
+  const setSubmit = () => {
+    setPopModal(true);
+    const timer = setTimeout(() => {
+      navigate("/main");
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  };
+
+  const DoneModal = () => {
+    return <div className="modal_container">등록되었습니다.</div>;
+  };
 
   return (
     <>
       <TopBackNav />
       <div id="AUTH_container" className="cont">
+        {popModal && <DoneModal />}
         <div>
           <div className="text_box">
             <div className="title">ESG 인증하기</div>
@@ -207,7 +223,7 @@ const AuthESG = () => {
         </div>
 
         <div className="upload_button_container">
-          <button type="submit" disabled={!allFilled}>
+          <button type="submit" disabled={!allFilled} onClick={setSubmit}>
             등록
           </button>
         </div>
