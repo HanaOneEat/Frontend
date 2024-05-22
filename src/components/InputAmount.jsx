@@ -17,7 +17,7 @@ const InputAmount = () => {
         console.log("Transaction successful:", response);
         setIsDone(true);
         const timer = setTimeout(() => {
-          navigate("/main");
+          navigate("/main/back");
         }, 3000);
         return () => clearTimeout(timer);
       })

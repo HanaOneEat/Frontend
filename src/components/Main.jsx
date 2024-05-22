@@ -5,17 +5,18 @@ import fetchAllStores from "../utils/fetchAllStores";
 
 import Loading from "./Loading";
 import NumberInfos from "../contexts/NumberInfos";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Landing from "./Landing";
 
 const Main = () => {
   //contextAPI
   const { numberData, updateNumberData } = useContext(NumberInfos);
+  const { back } = useParams();
 
   //axios
   const [storeList, setStoreList] = useState(null);
   const [isLoading, setIsLoading] = useState(false); //초기 로드값 일단 false
-  const [isLanding, setIsLanding] = useState(true);
+  const [isLanding, setIsLanding] = useState(!back);
 
   useEffect(() => {
     const loadAllStores = async () => {
@@ -27,8 +28,7 @@ const Main = () => {
     loadAllStores();
 
     const timer = setTimeout(() => {
-      // setIsLanding(false);
-      console.log("타임");
+      setIsLanding(false);
     }, 2000);
 
     return () => clearTimeout(timer);
