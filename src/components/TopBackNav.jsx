@@ -9,12 +9,13 @@ const TopBackNav = ({ noBg }) => {
 
   return (
     <div id="TBN_container" className={`${noBg ? "no_bg_bar" : ""}`}>
-      <div className="back_box">
+      <div className="back_box" onClick={() => window.history.back()}>
         {currentLocation.pathname.substring(0, 14) === "/store_details" ? (
-          <Link to="/map">
-            <IoClose className="back_icon" />
-          </Link>
+          // <Link to="/map">
+
+          <IoClose className="back_icon" />
         ) : (
+          // </Link>
           <HiMiniArrowLeft className="back_icon" />
         )}
       </div>

@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const fetchStoreData = async (storeId) => {
+const fetchAllStores = async () => {
   try {
-    const response = await axios.get(`http://localhost:8080/store?storeId=${storeId}`);
+    const response = await axios.get("http://localhost:8080/store/list");
     if (response.data) {
       //응답 데이터가 있음
       return response.data;
@@ -11,10 +11,10 @@ const fetchStoreData = async (storeId) => {
       throw new Error("Invalid response structure");
     }
   } catch (error) {
-    console.error("(가게 선택 정보 오류) Error fetching store data:", error);
+    console.error("(모든 가게 정보 불러오기 오류) Error fetching all store data:", error);
     return null;
     //에러시 null
   }
 };
 
-export default fetchStoreData;
+export default fetchAllStores;

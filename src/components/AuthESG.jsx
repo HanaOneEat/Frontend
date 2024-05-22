@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import TopBackNav from "./TopBackNav";
+import fetchAuthData from "../utils/fetchAuthData";
 
 const AuthESG = () => {
   const [inputStore, setInputStore] = useState("");
@@ -48,6 +49,20 @@ const AuthESG = () => {
       setAllFilled(true);
     }
   }, [inputTitle, inputYear, inputMonth, inputDate, inputAbout]);
+
+  //axios
+  const [isLoading, setIsLoading] = useState(false);
+  const [esgData, setEsgData] = useState(null);
+  useEffect(() => {
+    const loadEsgData = async () => {
+      setIsLoading(true);
+      const resData = fetchAuthData();
+      setEsgData(resData);
+      setIsLoading(false);
+    };
+
+    //loadEsgData()
+  }, []);
 
   return (
     <>

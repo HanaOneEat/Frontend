@@ -9,11 +9,12 @@
   // background-color: rgb(214, 214, 214);
   background: $bg-color;
   padding: 0;
-
+  // height: 83vh;
   //   transform: translateY(-5px);
   // * {
   //   @include tempBorder;
   // }
+  overflow: scroll;
   .text_box {
     display: flex;
     flex-direction: row;
@@ -26,7 +27,7 @@
   }
   .scrollable {
     width: 100%;
-    height: 76.5vh;
+    // height: 50vh;
     // overflow-y: scroll;
     > div {
       display: flex;
@@ -113,6 +114,7 @@
         position: relative;
         padding: 1vw;
         overflow: visible;
+
         .without_point {
           display: flex;
           flex-direction: column;
@@ -138,41 +140,74 @@
             font-family: "Pretendard-Bold";
           }
         }
-        .per_store {
+        .whole_store_box {
+          > Link {
+            width: 30%;
+            height: 40vw;
+          }
           display: flex;
           flex-direction: row;
           justify-content: space-between;
           align-items: center;
-          margin: 1.7vw 0;
-          font-family: "Pretendard-Medium";
-          font-size: 1.4rem;
-          .name {
-          }
-          .point {
+          height: 40vw;
+          .per_store {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            width: fit-content;
+            margin: 1.7vw 0;
+            font-family: "Pretendard-Medium";
+            font-size: 1.8rem;
+            width: 100%;
             height: 100%;
-            .right_icon {
-              color: rgba(100, 100, 100, 0.6);
-              width: 30px;
+            .name {
+              font-family: "Pretendard-Medium";
+              display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              height: 20%;
+            }
+            img {
+              height: 24vw;
+              width: 24vw;
+              object-fit: cover;
+              border-radius: 12px;
+              padding: 4px;
+            }
+            .point {
+              display: flex;
+              flex-direction: row;
+              justify-content: end;
+              align-items: center;
+              width: fit-content;
+              width: 100%;
+              //
+              .leaf_icon {
+                margin-left: 5px;
+              }
+              height: 20%;
+              .right_icon {
+                color: rgba(100, 100, 100, 0.6);
+                width: 30px;
+              }
             }
           }
         }
         .point_sum {
           display: flex;
           flex-direction: row;
-          justify-content: end;
+          justify-content: center;
           align-items: center;
-          padding-top: 2vw;
-          font-size: 1.6rem;
+          // padding-top: 2vw;
+
+          margin-top: 5px;
+          font-size: 3rem;
           font-family: "Pretendard-Bold";
           margin-bottom: 10px;
           .leaf_icon {
-            font-size: 1.4rem;
-            margin-right: 30px;
+            font-size: 3rem;
+            // margin-right: 30px;
           }
         }
       }

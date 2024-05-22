@@ -1,44 +1,41 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import TopBackNav from "./TopBackNav";
 import StoreContent from "./StoreContent";
+import fetchAllStores from "../utils/fetchAllStores";
 
-import Store1 from "../assets/images/Store_1.png";
-import Store2 from "../assets/images/Store_2.png";
-import Store3 from "../assets/images/Store_3.jpg";
+import Loading from "./Loading";
+import NumberInfos from "../contexts/NumberInfos";
+import { Link } from "react-router-dom";
 
 const Main = () => {
-  const tempStoreInfo = [
-    {
-      name: "한식뷔페 대가 - 청라점",
-      image: Store1,
-      intro: "저는 기부 중독이에요. 기부 조아",
-      score: 4.9,
-      reviews: 1234,
-      point: 300,
-      count: 18,
-      period: 6,
-    },
-    {
-      name: "유기농 가구 공방 가구조아",
-      image: Store2,
-      intro: "우리집.가구는.유기농.나무로만.만듭니다,,^^~*",
-      score: 4.1,
-      reviews: 512,
-      point: 100,
-      count: 12,
-      period: 12,
-    },
-    {
-      name: "친환경 비누가게 비누조아",
-      image: Store3,
-      intro: "ESG 최고~, 환경 지켜~, 비누 사조~",
-      score: 4.7,
-      reviews: 2496,
-      point: 27,
-      count: 5,
-      period: 18,
-    },
-  ];
+  //contextAPI
+  const { numberData, updateNumberData } = useContext(NumberInfos);
+
+  //axios
+  const [storeList, setStoreList] = useState(null);
+  const [isLoading, setIsLoading] = useState(false); //초기 로드값 일단 false
+  useEffect(() => {
+    const loadAllStores = async () => {
+      setIsLoading(true);
+      const resData = await fetchAllStores();
+      setStoreList(resData);
+      setIsLoading(false);
+    };
+    loadAllStores();
+    console.log(numberData);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div>
+        <Loading />
+      </div>
+    );
+  }
+
+  // if (!storeList) {
+  //   return <div>주변에 가게가 존재하지 않습니다.</div>;
+  // }
 
   return (
     <>
@@ -48,9 +45,12 @@ const Main = () => {
           <div className="title">ESG 가게 목록</div>
           <div className="subtext">근처의 ESG 활동을 실천 중인 가게 목록이에요</div>
         </div>
-        {tempStoreInfo.map((value) => (
-          <StoreContent storeInfo={value} />
-        ))}
+        {storeList &&
+          storeList.map((value, index) => (
+            <Link to={`/store_details/${index + 1}`}>
+              <StoreContent key={index} storeInfo={value} index={index} />
+            </Link>
+          ))}
       </div>
     </>
   );

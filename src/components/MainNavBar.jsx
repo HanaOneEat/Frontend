@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import { FaHome, FaLeaf, FaMap, FaSearch, FaUserCircle } from "react-icons/fa";
 import TopBackNav from "./TopBackNav";
+import UserId from "../contexts/UserId";
 
 const MainNavBar = () => {
   const location = useLocation();
 
   const isActive = (thisPath) => location.pathname === thisPath;
+
+  //contextAPI
+  const { userId, updateUserId } = useContext(UserId);
 
   return (
     <div id="MNB_container">
@@ -36,7 +40,13 @@ const MainNavBar = () => {
           </div>
           <div className="text_box">ESG 인증</div>
         </Link>
-        <Link className={`button_box ${isActive("/my_page") ? "active" : ""}`} to="/my_page">
+        <Link
+          className={`button_box ${isActive("/my_page/1" || "/my_page/2") ? "active" : ""}`}
+          to={`/my_page/${userId}`}
+          // onClick={() => {
+          //   updateUserId(userId === 1 ? 2 : 1);
+          // }}
+        >
           <div className="icon_box">
             <FaUserCircle className="icon" />
           </div>

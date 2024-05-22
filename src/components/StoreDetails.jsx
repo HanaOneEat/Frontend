@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import fetchStoreData from "../utils/fetchStoreData";
 import TopBackNav from "./TopBackNav";
 
-import StoreImage from "../assets/images/Store_2.png";
 import EsgActivs from "../assets/images/Esg_Activities.png";
 import GraphBG from "../assets/images/Graph_bg.png";
 
@@ -12,26 +11,23 @@ import { IoLocationSharp } from "react-icons/io5";
 import { RiMegaphoneFill } from "react-icons/ri";
 import { IoIosCall } from "react-icons/io";
 import { AiFillClockCircle } from "react-icons/ai";
+import Loading from "./Loading";
+
+import Store1 from "../assets/images/Store_1.png";
+import Store2 from "../assets/images/Store_2.jpg";
+import Store3 from "../assets/images/Store_3.png";
+import Store4 from "../assets/images/Store_4.jpg";
+import Store5 from "../assets/images/Store_5.jpg";
 
 const StoreDetails = () => {
   const { storeId } = useParams();
 
-  const [thisStore, setThisStore] = useState({
-    id: "가게-ID",
-    name: "망글이네 공방",
-    rating: 4.8,
-    esgScore: 1200,
-    oneSentence: "망그러졌지만.. 이뻐요 우리 가게...",
-    address: "망그러진 마을 망망시 글글동 망곰이네",
-  });
-  const [isLoading, setIsLoading] = useState(true);
+  const imageList = [Store1, Store2, Store3, Store4, Store5];
 
+  //axios
+  const [thisStore, setThisStore] = useState(null);
+  const [isLoading, setIsLoading] = useState(false); //초기 로드값 일단false
   useEffect(() => {
-    //프론트단 테스트용
-    if (storeId === "test") {
-      setIsLoading(false);
-      return;
-    }
     const loadStoreData = async () => {
       setIsLoading(true);
       const resData = await fetchStoreData(storeId);
@@ -42,20 +38,24 @@ const StoreDetails = () => {
     loadStoreData();
   }, [storeId]);
 
-  if (isLoading) {
-    return <div>로딩 중</div>;
+  if (isLoading || !thisStore) {
+    return (
+      <div>
+        <Loading />
+      </div>
+    );
   }
 
-  if (!thisStore) {
-    return <div>가게 정보가 없습니다.</div>;
-  }
+  // if (!thisStore) {
+  //   return <div>가게 정보가 없습니다.</div>;
+  // }
 
   return (
     <>
       <TopBackNav />
       <div id="SD_container">
         <div className="image_box">
-          <img className="image" src={StoreImage} alt="매장 사진" />
+          <img className="image" src={imageList[storeId - 1]} alt="매장 사진" />
         </div>
         <div className="summary_box temp_box_shadow">
           <div className="name">{thisStore.name}</div>
