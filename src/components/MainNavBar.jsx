@@ -25,7 +25,7 @@ const MainNavBar = () => {
           <div className="text_box">하나머니</div>
         </Link>
         <Link
-          className={`button_box ${isActive("/main" || "/main/first") ? "active" : ""}`}
+          className={`button_box ${isActive("/main") || isActive("/main/first") ? "active" : ""}`}
           to="/main"
         >
           <div className="icon_box">
@@ -46,7 +46,9 @@ const MainNavBar = () => {
           <div className="text_box">ESG 인증</div>
         </Link>
         <Link
-          className={`button_box ${isActive("/my_page/1" || "/my_page/2") ? "active" : ""}`}
+          className={`button_box ${
+            isActive("/my_page/1") || isActive("/my_page/2") ? "active" : ""
+          }`}
           to={`/my_page/${userId}`}
           // onClick={() => {
           //   updateUserId(userId === 1 ? 2 : 1);
